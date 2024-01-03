@@ -1,0 +1,17 @@
+{
+	"id": "header",
+	"label": "Header",
+	"format": "custom",
+	"repeatable": true,
+	"status": true,
+	"json": {
+		"Main": {
+			"uid": {
+				"config": {
+					"label": "UID"
+				},
+				"type": "UID"
+			}
+		}
+	}
+}
