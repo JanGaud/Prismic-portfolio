@@ -4,24 +4,7 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-interface HeaderDocumentData {}
-
-/**
- * Header document from Prismic
- *
- * - **API ID**: `header`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type HeaderDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
-	Simplify<HeaderDocumentData>,
-	'header',
-	Lang
->;
-
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice = HeaderSlice | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -96,7 +79,79 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 	Lang
 >;
 
-export type AllDocumentTypes = HeaderDocument | PageDocument;
+export type AllDocumentTypes = PageDocument;
+
+/**
+ * Primary content in *Header → Primary*
+ */
+export interface HeaderSliceDefaultPrimary {
+	/**
+	 * Title field in *Header → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * SubTitle field in *Header → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.primary.subtitle
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	subtitle: prismic.RichTextField;
+
+	/**
+	 * HeaderImg field in *Header → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.primary.headerimg
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	headerimg: prismic.ImageField<never>;
+
+	/**
+	 * HeaderLink field in *Header → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.primary.headerlink
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	headerlink: prismic.LinkField;
+}
+
+/**
+ * Default variation for Header Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<HeaderSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Header*
+ */
+type HeaderSliceVariation = HeaderSliceDefault;
+
+/**
+ * Header Shared Slice
+ *
+ * - **API ID**: `header`
+ * - **Description**: Header
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSlice = prismic.SharedSlice<'header', HeaderSliceVariation>;
 
 /**
  * Primary content in *RichText → Primary*
@@ -150,12 +205,14 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
-			HeaderDocument,
-			HeaderDocumentData,
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
 			AllDocumentTypes,
+			HeaderSlice,
+			HeaderSliceDefaultPrimary,
+			HeaderSliceVariation,
+			HeaderSliceDefault,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,
