@@ -27,10 +27,10 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
-						"header": {
+						"navigation_item": {
 							"type": "SharedSlice"
 						},
-						"rich_text": {
+						"header": {
 							"type": "SharedSlice"
 						}
 					}

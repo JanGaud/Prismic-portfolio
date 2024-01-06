@@ -4,7 +4,99 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = HeaderSlice | RichTextSlice;
+/**
+ * Item in *Nav → Brand*
+ */
+export interface NavDocumentDataBrandItem {
+	/**
+	 * Logo field in *Nav → Brand*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: nav.brand[].logo
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo: prismic.ImageField<never>;
+
+	/**
+	 * Brand Link field in *Nav → Brand*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: nav.brand[].brand_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	brand_link: prismic.LinkField;
+}
+
+/**
+ * Item in *Nav → Links*
+ */
+export interface NavDocumentDataLinksItem {
+	/**
+	 * Link field in *Nav → Links*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: nav.links[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+
+	/**
+	 * Label field in *Nav → Links*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: nav.links[].label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	label: prismic.KeyTextField;
+}
+
+/**
+ * Content for Nav documents
+ */
+interface NavDocumentData {
+	/**
+	 * Brand field in *Nav*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: nav.brand[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	brand: prismic.GroupField<Simplify<NavDocumentDataBrandItem>>;
+
+	/**
+	 * Links field in *Nav*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: nav.links[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	links: prismic.GroupField<Simplify<NavDocumentDataLinksItem>>;
+}
+
+/**
+ * Nav document from Prismic
+ *
+ * - **API ID**: `nav`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<NavDocumentData>,
+	'nav',
+	Lang
+>;
+
+type PageDocumentDataSlicesSlice = NavigationItemSlice | HeaderSlice;
 
 /**
  * Content for Page documents
@@ -79,7 +171,7 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 	Lang
 >;
 
-export type AllDocumentTypes = PageDocument;
+export type AllDocumentTypes = NavDocument | PageDocument;
 
 /**
  * Primary content in *Header → Primary*
@@ -153,48 +245,6 @@ type HeaderSliceVariation = HeaderSliceDefault;
  */
 export type HeaderSlice = prismic.SharedSlice<'header', HeaderSliceVariation>;
 
-/**
- * Primary content in *RichText → Primary*
- */
-export interface RichTextSliceDefaultPrimary {
-	/**
-	 * Content field in *RichText → Primary*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: Lorem ipsum...
-	 * - **API ID Path**: rich_text.primary.content
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	content: prismic.RichTextField;
-}
-
-/**
- * Default variation for RichText Slice
- *
- * - **API ID**: `default`
- * - **Description**: RichText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type RichTextSliceDefault = prismic.SharedSliceVariation<
-	'default',
-	Simplify<RichTextSliceDefaultPrimary>,
-	never
->;
-
-/**
- * Slice variation for *RichText*
- */
-type RichTextSliceVariation = RichTextSliceDefault;
-
-/**
- * RichText Shared Slice
- *
- * - **API ID**: `rich_text`
- * - **Description**: RichText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type RichTextSlice = prismic.SharedSlice<'rich_text', RichTextSliceVariation>;
-
 declare module '@prismicio/client' {
 	interface CreateClient {
 		(
@@ -205,6 +255,10 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			NavDocument,
+			NavDocumentData,
+			NavDocumentDataBrandItem,
+			NavDocumentDataLinksItem,
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
@@ -212,11 +266,7 @@ declare module '@prismicio/client' {
 			HeaderSlice,
 			HeaderSliceDefaultPrimary,
 			HeaderSliceVariation,
-			HeaderSliceDefault,
-			RichTextSlice,
-			RichTextSliceDefaultPrimary,
-			RichTextSliceVariation,
-			RichTextSliceDefault
+			HeaderSliceDefault
 		};
 	}
 }

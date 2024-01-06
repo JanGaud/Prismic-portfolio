@@ -3,7 +3,10 @@
 	import { page } from '$app/stores';
 	import { repositoryName } from '$lib/prismicio';
 	import "../app.css";
-</script>
+	import Nav from '$lib/components/Nav.svelte';
+
+	export let data;
+	</script>
 
 <svelte:head>
 	<title>{$page.data.title}</title>
@@ -19,7 +22,8 @@
 	{/if}
 </svelte:head>
 
-<main class="md:my-12 md:mx-20 my-10 mx-4">
+<Nav links={data.nav.data.links} brand={data.nav.data.brand} />
+<main class="md:my-12 md:mx-20 my-10 mx-4 h-[2000px]">
 	<slot />
 </main>
 <PrismicPreview {repositoryName} />

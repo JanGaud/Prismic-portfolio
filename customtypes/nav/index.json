@@ -1,0 +1,58 @@
+{
+	"id": "nav",
+	"label": "Nav",
+	"format": "custom",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"brand": {
+				"type": "Group",
+				"config": {
+					"label": "Brand",
+					"fields": {
+						"logo": {
+							"type": "Image",
+							"config": {
+								"label": "Logo",
+								"constraint": {},
+								"thumbnails": []
+							}
+						},
+						"brand_link": {
+							"type": "Link",
+							"config": {
+								"label": "Brand Link",
+								"placeholder": "",
+								"select": null
+							}
+						}
+					}
+				}
+			},
+			"links": {
+				"type": "Group",
+				"config": {
+					"label": "Links",
+					"fields": {
+						"link": {
+							"type": "Link",
+							"config": {
+								"label": "Link",
+								"placeholder": "",
+								"select": null
+							}
+						},
+						"label": {
+							"type": "Text",
+							"config": {
+								"label": "Label",
+								"placeholder": ""
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

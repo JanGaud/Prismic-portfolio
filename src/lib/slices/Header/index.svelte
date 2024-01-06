@@ -1,66 +1,75 @@
 <script>
-    import { PrismicRichText, PrismicLink } from "@prismicio/svelte";
-    import { onMount } from "svelte";
+	import { PrismicRichText, PrismicLink } from '@prismicio/svelte';
+	import { onMount } from 'svelte';
 
-    /**
+	/**
 	 * @type {{ primary: { headerimg: { url: any; }; title: any; subtitle: any; headerlink: any; }; slice_type: any; variation: any; }}
 	 */
-     export let slice;
-    let headerImg = slice.primary.headerimg.url;
+	export let slice;
+	let headerImg = slice.primary.headerimg.url;
 
-    let blinkClassName = 'blink';
+	let blinkClassName = 'blink';
 
-    onMount(() => {
-        function blink() {
-            const elements = document.querySelectorAll('.neonText');
-            elements.forEach(element => {
-                element.classList.toggle(blinkClassName);
-            });
-            setTimeout(blink, Math.random() * 2000 + 500);
-        }
-        blink();
-    });
+	onMount(() => {
+		function blink() {
+			const elements = document.querySelectorAll('.neonText');
+			elements.forEach((element) => {
+				element.classList.toggle(blinkClassName);
+			});
+			setTimeout(blink, Math.random() * 2000 + 500);
+		}
+		blink();
+	});
 </script>
 
-<section 
-    style="background-image: url({headerImg}); background-size: cover; background-position: center;"
-    class="relative overflow-hidden h-screen md:h-[400px] md:-my-12 md:-mx-20 -my-10 -mx-4 flex flex-col justify-center items-center gap-6 px-4 py-8 bg-primary"
-    data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+<section
+	style="background-image: url({headerImg}); background-size: cover; background-position: center;"
+	class="relative overflow-hidden h-screen md:h-[400px] md:-my-12 md:-mx-20 -my-10 -mx-4 flex flex-col justify-center items-center gap-6 px-4 py-8 bg-primary"
+	data-slice-type={slice.slice_type}
+	data-slice-variation={slice.variation}
+>
+	<div class="absolute w-full h-full bg-black opacity-75"></div>
 
-    <div class="absolute w-full h-full bg-black opacity-75"></div>
+	<hgroup class="flex flex-col items-center gap-7 md:gap-5 px-6 text-center z-10">
+		<h2 class="text-5xl md:text-7xl text-white neonText">
+			<PrismicRichText field={slice.primary.title} />
+		</h2>
+		<h3 class="text-2xl md:text-3xl text-white neonText">
+			<PrismicRichText field={slice.primary.subtitle} />
+		</h3>
+	</hgroup>
 
-    <hgroup class="flex flex-col items-center gap-3 px-6 text-center z-10">
-        <h2 class="text-5xl md:text-7xl text-white neonText">
-            <PrismicRichText field={slice.primary.title} />
-        </h2>
-        <h3 class="text-2xl md:text-3xl text-white neonText">
-            <PrismicRichText field={slice.primary.subtitle} />
-        </h3>
-    </hgroup>
+	<div class="flex justify-around w-fit z-10">
+		<a
+			class="text-lg md:text-2xl text-white px-6 py-4 border-2 rounded-2xl shadow-lg hover:border-third hover:text-third hover:backdrop-blur transition-colors"
+			href="<PrismicLink field={slice.primary.headerlink}>Link</PrismicLink>"
+		>
+			See more
+		</a>
+	</div>
 
-    <div class="flex justify-around w-fit z-10">
-        <a class="text-lg md:text-2xl text-white px-6 py-4 border-2 rounded-2xl shadow-lg hover:border-third hover:text-third hover:backdrop-blur transition-colors"
-           href="<PrismicLink field={slice.primary.headerlink}>Link</PrismicLink>">
-            See more
-        </a>
-    </div>
+	<div
+		class="absolute w-full bottom-0 h-40"
+		style="background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.87718837535014) 0%, rgba(255,255,255,0) 84%);">
+</div>
 </section>
 
 <style>
-    .neonText {
-        color: #fff;
-        text-shadow:
-            0 0 7px #fff,
-            0 0 10px #fff,
-            0 0 21px #fff,
-            0 0 42px #368084,
-            0 0 82px #368084,
-            0 0 92px #368084,
-            0 0 102px #368084,
-            0 0 151px #368084;
-    }
+	.neonText {
+		color: #fff;
+		text-shadow:
+			0 0 7px #fff,
+			0 0 10px #fff,
+			0 0 21px #fff,
+			0 0 42px #368084,
+			0 0 82px #368084,
+			0 0 92px #368084,
+			0 0 102px #368084,
+			0 0 151px #6ebfc4;
+	}
 
-    :global(.blink) {
-        opacity: 0.8;
-    }
+	:global(.blink) {
+		opacity: 0.8;
+	}
 </style>
