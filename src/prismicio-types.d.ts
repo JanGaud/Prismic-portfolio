@@ -174,6 +174,33 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 export type AllDocumentTypes = NavDocument | PageDocument;
 
 /**
+ * Default variation for Articles Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticlesSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	never
+>;
+
+/**
+ * Slice variation for *Articles*
+ */
+type ArticlesSliceVariation = ArticlesSliceDefault;
+
+/**
+ * Articles Shared Slice
+ *
+ * - **API ID**: `articles`
+ * - **Description**: Articles
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticlesSlice = prismic.SharedSlice<'articles', ArticlesSliceVariation>;
+
+/**
  * Primary content in *Header → Primary*
  */
 export interface HeaderSliceDefaultPrimary {
@@ -263,6 +290,9 @@ declare module '@prismicio/client' {
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
 			AllDocumentTypes,
+			ArticlesSlice,
+			ArticlesSliceVariation,
+			ArticlesSliceDefault,
 			HeaderSlice,
 			HeaderSliceDefaultPrimary,
 			HeaderSliceVariation,
