@@ -11,13 +11,10 @@
 
     let isMobileMenuOpen = false;
 
-    // Function to toggle the body's overflow
-    function toggleBodyScroll(open) {
-        document.body.style.overflow = open ? 'hidden' : '';
+    function handleMenuToggle() {
+        isMobileMenuOpen = !isMobileMenuOpen;
+        document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
     }
-
-    // Update body scroll when isMobileMenuOpen changes
-    $: toggleBodyScroll(isMobileMenuOpen);
 </script>
 
 <nav class="fixed top-0 w-full z-50 text-white flex justify-between items-center pl-10 pr-7 pt-2">
@@ -38,7 +35,14 @@
 
     <!-- Mobile Menu Toggle Button -->
     <div class="md:hidden">
-        <input type="checkbox" role="button" aria-label="Display the menu" class="menu" bind:checked={isMobileMenuOpen}>
+        <input 
+            type="checkbox" 
+            role="button" 
+            aria-label="Display the menu" 
+            class="menu" 
+            bind:checked={isMobileMenuOpen}
+            on:click={handleMenuToggle}
+        >
     </div>
 </nav>
 
@@ -56,6 +60,7 @@
         </ul>
     </div>
 {/if}
+
 
 <style>
     .menu {
@@ -112,6 +117,9 @@
     }
     .menu:focus-visible {
         clip-path: none;
-        mask: none
-	}
+        mask: none;
+        border: none;
+        outline: 2px solid var(--c);
+        outline-offset: 5px;
+    }
 </style>

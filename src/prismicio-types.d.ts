@@ -96,7 +96,7 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = NavigationItemSlice | HeaderSlice;
+type PageDocumentDataSlicesSlice = ArticlesSlice | HeaderSlice;
 
 /**
  * Content for Page documents
