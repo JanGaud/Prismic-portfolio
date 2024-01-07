@@ -23,7 +23,7 @@
 </svelte:head>
 
 <Nav links={data.nav.data.links} brand={data.nav.data.brand} />
-<main class="md:my-12 md:mx-20 my-10 mx-4 h-[2000px]">
+<main class="md:my-12 md:mx-20 my-10 mx-4">
 	<slot />
 </main>
 <PrismicPreview {repositoryName} />

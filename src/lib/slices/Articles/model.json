@@ -1,16 +1,52 @@
 {
-	"id": "articles",
-	"type": "SharedSlice",
-	"name": "Articles",
-	"description": "Articles",
-	"variations": [
-		{
-			"id": "default",
-			"name": "Default",
-			"docURL": "...",
-			"version": "initial",
-			"description": "Default",
-			"imageUrl": ""
-		}
-	]
+  "id": "articles",
+  "type": "SharedSlice",
+  "name": "Articles",
+  "description": "Articles",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "articleimg": {
+          "type": "Image",
+          "config": {
+            "label": "ArticleImg",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "articletitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "ArticleTitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "articletext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "ArticleText",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "articledate": {
+          "type": "Timestamp",
+          "config": {
+            "label": "ArticleDate",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
 }

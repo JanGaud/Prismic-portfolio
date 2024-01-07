@@ -22,7 +22,7 @@
 	}
 </script>
 
-<nav class="fixed top-0 w-full z-50 text-white flex justify-between items-center pl-10 pr-7 pt-2">
+<nav class="fixed top-0 w-full z-50 text-fourth flex justify-between items-center pl-10 pr-7 pt-2">
 	<div>
 		<a class="drop-shadow-xl" href="/"><PrismicImage width="100" field={brand[0]?.logo} /></a>
 	</div>
@@ -32,7 +32,7 @@
 		class="hidden md:flex w-fit items-end justify-end gap-10 px-6 py-2 backdrop-blur-md rounded-2xl"
 	>
 		{#each links as link}
-			<li class="hover:text-third hover:border-b-third border-b-2 transition-colors">
+			<li class="hover:text-third hover:border-b-third border-b-2 border-fourth transition-colors">
 				<PrismicLink field={link.link}>
 					{link.label}
 				</PrismicLink>
@@ -58,7 +58,7 @@
 	<div class="fixed z-40 h-screen w-full gap-5 backdrop-blur-md md:hidden">
 		<ul class="w-full h-full flex flex-col gap-6 justify-center items-center text-3xl font-bold">
 			{#each links as link}
-				<li class="text-white drop-shadow-xl">
+				<li class="text-fourth drop-shadow-xl">
 					<button on:click={closeMenu}
 						><PrismicLink field={link.link}>
 							{link.label}

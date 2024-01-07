@@ -1,6 +1,7 @@
 <script>
 	import { PrismicRichText, PrismicLink } from '@prismicio/svelte';
 	import { onMount } from 'svelte';
+	import Icon from '@iconify/svelte';
 
 	/**
 	 * @type {{ primary: { headerimg: { url: any; }; title: any; subtitle: any; headerlink: any; }; slice_type: any; variation: any; }}
@@ -41,17 +42,16 @@
 
 	<div class="flex justify-around w-fit z-10">
 		<a
-			class="text-lg md:text-2xl text-white px-6 py-4 border-2 rounded-2xl shadow-lg hover:border-third hover:text-third hover:backdrop-blur transition-colors"
-			href="<PrismicLink field={slice.primary.headerlink}>Link</PrismicLink>"
+			class="text-lg md:text-2xl text-fourth px-6 py-4 border-2 border-fourth rounded-full shadow-lg hover:border-third hover:text-third hover:backdrop-blur transition-colors"
+			href="/"
 		>
-			See more
+			<Icon icon="gravity-ui:play" />
 		</a>
 	</div>
-
 	<div
 		class="absolute w-full bottom-0 h-40"
 		style="background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,0.87718837535014) 0%, rgba(255,255,255,0) 84%);">
+    	background: linear-gradient(0deg, rgba(0,0,0,0.87718837535014) 0%, rgba(255,255,255,0) 84%);">
 </div>
 </section>
 

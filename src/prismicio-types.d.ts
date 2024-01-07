@@ -174,6 +174,51 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 export type AllDocumentTypes = NavDocument | PageDocument;
 
 /**
+ * Primary content in *Articles → Items*
+ */
+export interface ArticlesSliceDefaultItem {
+	/**
+	 * ArticleImg field in *Articles → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: articles.items[].articleimg
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	articleimg: prismic.ImageField<never>;
+
+	/**
+	 * ArticleTitle field in *Articles → Items*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: articles.items[].articletitle
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	articletitle: prismic.TitleField;
+
+	/**
+	 * ArticleText field in *Articles → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: articles.items[].articletext
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	articletext: prismic.RichTextField;
+
+	/**
+	 * ArticleDate field in *Articles → Items*
+	 *
+	 * - **Field Type**: Timestamp
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: articles.items[].articledate
+	 * - **Documentation**: https://prismic.io/docs/field#timestamp
+	 */
+	articledate: prismic.TimestampField;
+}
+
+/**
  * Default variation for Articles Slice
  *
  * - **API ID**: `default`
@@ -183,7 +228,7 @@ export type AllDocumentTypes = NavDocument | PageDocument;
 export type ArticlesSliceDefault = prismic.SharedSliceVariation<
 	'default',
 	Record<string, never>,
-	never
+	Simplify<ArticlesSliceDefaultItem>
 >;
 
 /**
@@ -291,6 +336,7 @@ declare module '@prismicio/client' {
 			PageDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			ArticlesSlice,
+			ArticlesSliceDefaultItem,
 			ArticlesSliceVariation,
 			ArticlesSliceDefault,
 			HeaderSlice,

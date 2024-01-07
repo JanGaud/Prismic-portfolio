@@ -3,6 +3,72 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"articleimg",
+						{
+							"__TYPE__": "ImageContent",
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+								"width": 4024,
+								"height": 4024
+							},
+							"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+							"width": 4024,
+							"height": 4024,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"thumbnails": {}
+						}
+					],
+					[
+						"articletitle",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading2",
+									"content": {
+										"text": "These"
+									}
+								}
+							]
+						}
+					],
+					[
+						"articletext",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Enim culpa Lorem aute adipisicing dolore proident eiusmod enim velit consequat deserunt. Cupidatat officia officia occaecat nisi sunt deserunt adipisicing laboris esse sunt ad. Non ipsum dolor eu aliquip exercitation fugiat Lorem cillum nulla adipisicing reprehenderit culpa qui ea deserunt."
+									}
+								}
+							]
+						}
+					],
+					[
+						"articledate",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Timestamp",
+							"value": "2021-03-28T00:29:21Z"
+						}
+					]
+				]
+			}
+		]
 	}
 ]
