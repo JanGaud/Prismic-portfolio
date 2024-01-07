@@ -317,6 +317,33 @@ type HeaderSliceVariation = HeaderSliceDefault;
  */
 export type HeaderSlice = prismic.SharedSlice<'header', HeaderSliceVariation>;
 
+/**
+ * Default variation for QuickLinks Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuickLinksSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	never
+>;
+
+/**
+ * Slice variation for *QuickLinks*
+ */
+type QuickLinksSliceVariation = QuickLinksSliceDefault;
+
+/**
+ * QuickLinks Shared Slice
+ *
+ * - **API ID**: `quick_links`
+ * - **Description**: QuickLinks
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuickLinksSlice = prismic.SharedSlice<'quick_links', QuickLinksSliceVariation>;
+
 declare module '@prismicio/client' {
 	interface CreateClient {
 		(
@@ -342,7 +369,10 @@ declare module '@prismicio/client' {
 			HeaderSlice,
 			HeaderSliceDefaultPrimary,
 			HeaderSliceVariation,
-			HeaderSliceDefault
+			HeaderSliceDefault,
+			QuickLinksSlice,
+			QuickLinksSliceVariation,
+			QuickLinksSliceDefault
 		};
 	}
 }

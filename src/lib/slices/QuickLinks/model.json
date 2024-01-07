@@ -1,0 +1,16 @@
+{
+	"id": "quick_links",
+	"type": "SharedSlice",
+	"name": "QuickLinks",
+	"description": "QuickLinks",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": ""
+		}
+	]
+}

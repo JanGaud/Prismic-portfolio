@@ -18,11 +18,11 @@
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	<div class="flex items-center gap-10 p-4 overflow-x-auto snap-mandatory snap-x">
+	<div class="flex items-center gap-14 p-4 overflow-x-auto snap-mandatory snap-x">
 		{#each slice.items as item}
 			{#if item}
 				<article
-					class="min-w-[225px] h-[350px] flex flex-col gap-4 overflow-y-hidden snap-center"
+					class="min-w-[300px] max-w-[300px] md:min-w-[250px] md:max-w-[250px] h-[350px] flex flex-col gap-4 overflow-y-hidden snap-center"
 				>
 					<header class="">
 						<PrismicImage field={item.articleimg} />
@@ -54,4 +54,5 @@
 			0 0 102px #368084,
 			0 0 151px #6ebfc4;
 	}
+
 </style>
