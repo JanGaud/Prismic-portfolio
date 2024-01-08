@@ -1,6 +1,4 @@
 <script>
-    import { PrismicImage } from '@prismicio/svelte';
-
     /**
 	 * @type {{ primary: { bg_img: { url: any; }; }; slice_type: any; variation: any; }}
 	 */

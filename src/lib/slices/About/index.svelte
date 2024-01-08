@@ -8,7 +8,7 @@
 </script>
 
 <section
-	class="my-20 h-screen justify-items-center grid-cols-1 grid lg:grid-cols-2 xl:gap-20"
+	class="my-20 h-fit justify-items-center grid-cols-1 grid lg:grid-cols-2 xl:gap-20"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
