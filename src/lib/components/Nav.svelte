@@ -41,7 +41,7 @@
 	</ul>
 
 	<!-- Mobile Menu Toggle Button -->
-	<div class="md:hidden">
+	<div class="md:hidden backdrop-blur-md py-2 rounded-full">
 		<input
 			type="checkbox"
 			role="button"
