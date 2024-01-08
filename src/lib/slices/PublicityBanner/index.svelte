@@ -53,16 +53,23 @@
 </section>
 
 <style>
-	.animate-scrollBanner {
-		animation: scrollBanner 60s linear infinite;
-	}
+.animate-scrollBanner {
+    animation: scrollBanner 60s linear infinite;
+}
 
-	@keyframes scrollBanner {
-		0% {
-			transform: translateX(0);
-		}
-		100% {
-			transform: translateX(-50%);
-		}
-	}
+@media screen and (max-width: 768px){
+    .animate-scrollBanner {
+        animation-duration: 120s;
+    }
+}
+
+@keyframes scrollBanner {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 </style>
