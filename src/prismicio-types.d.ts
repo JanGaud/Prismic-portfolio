@@ -96,7 +96,7 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = ArticlesSlice | HeaderSlice;
+type PageDocumentDataSlicesSlice = QuickLinksSlice | ArticlesSlice | HeaderSlice;
 
 /**
  * Content for Page documents
@@ -318,6 +318,31 @@ type HeaderSliceVariation = HeaderSliceDefault;
 export type HeaderSlice = prismic.SharedSlice<'header', HeaderSliceVariation>;
 
 /**
+ * Primary content in *QuickLinks → Items*
+ */
+export interface QuickLinksSliceDefaultItem {
+	/**
+	 * Link_Name field in *QuickLinks → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: quick_links.items[].link_name
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	link_name: prismic.RichTextField;
+
+	/**
+	 * Link field in *QuickLinks → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: quick_links.items[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+}
+
+/**
  * Default variation for QuickLinks Slice
  *
  * - **API ID**: `default`
@@ -327,7 +352,7 @@ export type HeaderSlice = prismic.SharedSlice<'header', HeaderSliceVariation>;
 export type QuickLinksSliceDefault = prismic.SharedSliceVariation<
 	'default',
 	Record<string, never>,
-	never
+	Simplify<QuickLinksSliceDefaultItem>
 >;
 
 /**
@@ -371,6 +396,7 @@ declare module '@prismicio/client' {
 			HeaderSliceVariation,
 			HeaderSliceDefault,
 			QuickLinksSlice,
+			QuickLinksSliceDefaultItem,
 			QuickLinksSliceVariation,
 			QuickLinksSliceDefault
 		};

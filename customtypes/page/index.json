@@ -27,6 +27,9 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"quick_links": {
+							"type": "SharedSlice"
+						},
 						"articles": {
 							"type": "SharedSlice"
 						},

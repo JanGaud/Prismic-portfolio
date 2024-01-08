@@ -3,6 +3,36 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					],
+					[
+						"link_name",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Proident amet nulla consectetur anim nostrud aliqua do sint dolor incididunt. Esse officia velit quis officia nostrud ut minim aute amet incididunt commodo et."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
 	}
 ]

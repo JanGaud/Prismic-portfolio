@@ -2,6 +2,7 @@
 	import { PrismicRichText, PrismicLink } from '@prismicio/svelte';
 	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
+	import MusicPlayer from '$lib/components/MusicPlayer.svelte';
 
 	/**
 	 * @type {{ primary: { headerimg: { url: any; }; title: any; subtitle: any; headerlink: any; }; slice_type: any; variation: any; }}
@@ -48,6 +49,7 @@
 			<Icon icon="gravity-ui:play" />
 		</a>
 	</div>
+	<MusicPlayer />
 	<div
 		class="absolute w-full bottom-0 h-40"
 		style="background: rgb(0,0,0);

@@ -14,7 +14,7 @@
 </script>
 
 <section
-	class="text-white my-20"
+	class="my-20 flex justify-center overflow-x-hidden"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
@@ -27,12 +27,12 @@
 					<header class="">
 						<PrismicImage field={item.articleimg} />
 					</header>
-					<div class="p-2 flex flex-col gap-2 border-t-2 border-r-2 border-third">
+					<div class="p-2 flex flex-col justify-between gap-2 border-t-2 border-r-2 border-third">
 						<h2 class="neonText text-lg"><PrismicRichText field={item.articletitle} /></h2>
 						<p class="text-fourth text-sm line-clamp-4">
 							<PrismicRichText field={item.articletext} />
 						</p>
-						<small class="text-sm">{formatDate(item.articledate)}</small>
+						<small class="text-sm text-fourth">{formatDate(item.articledate)}</small>
 					</div>
 				</article>
 			{/if}
