@@ -54,12 +54,12 @@
 
 <style>
 .animate-scrollBanner {
-    animation: scrollBanner 60s linear infinite;
+    animation: scrollBanner 180s linear infinite;
 }
 
 @media screen and (max-width: 768px){
     .animate-scrollBanner {
-        animation-duration: 180s;
+        animation-duration: 120s;
     }
 }
 
