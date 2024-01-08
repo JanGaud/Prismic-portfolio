@@ -57,9 +57,9 @@
     animation: scrollBanner 180s linear infinite;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .animate-scrollBanner {
-        animation-duration: 120s;
+        animation-duration: 60s;
     }
 }
 
@@ -68,8 +68,7 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-100%);
     }
 }
-
 </style>
