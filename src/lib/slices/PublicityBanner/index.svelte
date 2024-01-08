@@ -30,7 +30,7 @@
 	}
 </script>
 
-<section class="mt-28 h-20 md:h-24 md:-mx-20 -mx-4 border-y-2">
+<section class="mt-32 h-20 md:h-24 md:-mx-20 -mx-4 border-y-2">
 	<div class="flex items-center gap-28 h-full overflow-x-hidden">
 		<div class="inline-flex gap-20 animate-scrollBanner">
 			{#each events as event (event.uniqueKey)}
