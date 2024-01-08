@@ -12,13 +12,13 @@
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	<div class="relative w-full h-full">
+	<div class="relative w-full aspect-square">
 		<div
 			class="absolute w-full h-full"
 			style="background: rgb(255,255,255);
 				background: radial-gradient(circle, rgba(255,255,255,0) 42%, rgba(0,0,0,0.87718837535014) 64%, rgba(0,0,0,1) 73%);"
 		></div>
-		<img class="object-contain h-full" src={image} alt="" />
+		<img class="object-cover h-full w-full" src={image} alt="" />
 	</div>
 
 	<div class="text-fourth text-center flex flex-col justify-center gap-3">
