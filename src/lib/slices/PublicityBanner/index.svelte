@@ -59,7 +59,7 @@
 
 @media screen and (max-width: 768px){
     .animate-scrollBanner {
-        animation-duration: 120s;
+        animation-duration: 180s;
     }
 }
 
