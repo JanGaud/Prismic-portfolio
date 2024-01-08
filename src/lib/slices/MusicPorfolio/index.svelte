@@ -10,7 +10,7 @@
 <section
     data-slice-type={slice.slice_type}
     data-slice-variation={slice.variation}
-    class="md:-mx-20 -mx-4 h-screen md:h-[1000px]"
+    class="md:-mx-20 -mx-4 h-[1000px]"
 >
     <div class="relative h-full w-full overflow-hidden">
         <div
