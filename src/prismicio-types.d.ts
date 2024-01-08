@@ -97,6 +97,7 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 >;
 
 type PageDocumentDataSlicesSlice =
+	| MusicPorfolioSlice
 	| PublicityBannerSlice
 	| AboutSlice
 	| QuickLinksSlice
@@ -400,6 +401,63 @@ type HeaderSliceVariation = HeaderSliceDefault;
 export type HeaderSlice = prismic.SharedSlice<'header', HeaderSliceVariation>;
 
 /**
+ * Primary content in *MusicPorfolio → Primary*
+ */
+export interface MusicPorfolioSliceDefaultPrimary {
+	/**
+	 * Bg_Img field in *MusicPorfolio → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: music_porfolio.primary.bg_img
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	bg_img: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *MusicPorfolio → Items*
+ */
+export interface MusicPorfolioSliceDefaultItem {
+	/**
+	 * SoundCloud_Playlist field in *MusicPorfolio → Items*
+	 *
+	 * - **Field Type**: Embed
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: music_porfolio.items[].soundcloud_playlist
+	 * - **Documentation**: https://prismic.io/docs/field#embed
+	 */
+	soundcloud_playlist: prismic.EmbedField;
+}
+
+/**
+ * Default variation for MusicPorfolio Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MusicPorfolioSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<MusicPorfolioSliceDefaultPrimary>,
+	Simplify<MusicPorfolioSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *MusicPorfolio*
+ */
+type MusicPorfolioSliceVariation = MusicPorfolioSliceDefault;
+
+/**
+ * MusicPorfolio Shared Slice
+ *
+ * - **API ID**: `music_porfolio`
+ * - **Description**: MusicPorfolio
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MusicPorfolioSlice = prismic.SharedSlice<'music_porfolio', MusicPorfolioSliceVariation>;
+
+/**
  * Primary content in *PublicityBanner → Items*
  */
 export interface PublicityBannerSliceDefaultItem {
@@ -557,6 +615,11 @@ declare module '@prismicio/client' {
 			HeaderSliceDefaultPrimary,
 			HeaderSliceVariation,
 			HeaderSliceDefault,
+			MusicPorfolioSlice,
+			MusicPorfolioSliceDefaultPrimary,
+			MusicPorfolioSliceDefaultItem,
+			MusicPorfolioSliceVariation,
+			MusicPorfolioSliceDefault,
 			PublicityBannerSlice,
 			PublicityBannerSliceDefaultItem,
 			PublicityBannerSliceVariation,

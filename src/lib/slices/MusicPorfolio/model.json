@@ -1,0 +1,35 @@
+{
+  "id": "music_porfolio",
+  "type": "SharedSlice",
+  "name": "MusicPorfolio",
+  "description": "MusicPorfolio",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "bg_img": {
+          "type": "Image",
+          "config": {
+            "label": "Bg_Img",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "soundcloud_playlist": {
+          "type": "Embed",
+          "config": {
+            "label": "SoundCloud_Playlist",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

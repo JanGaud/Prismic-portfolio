@@ -3,6 +3,7 @@
 import About from './About/index.svelte';
 import Articles from './Articles/index.svelte';
 import Header from './Header/index.svelte';
+import MusicPorfolio from './MusicPorfolio/index.svelte';
 import PublicityBanner from './PublicityBanner/index.svelte';
 import QuickLinks from './QuickLinks/index.svelte';
 
@@ -10,6 +11,7 @@ export const components = {
 	about: About,
 	articles: Articles,
 	header: Header,
+	music_porfolio: MusicPorfolio,
 	publicity_banner: PublicityBanner,
 	quick_links: QuickLinks
 };
