@@ -96,7 +96,12 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = AboutSlice | QuickLinksSlice | ArticlesSlice | HeaderSlice;
+type PageDocumentDataSlicesSlice =
+	| PublicityBannerSlice
+	| AboutSlice
+	| QuickLinksSlice
+	| ArticlesSlice
+	| HeaderSlice;
 
 /**
  * Content for Page documents
@@ -395,6 +400,81 @@ type HeaderSliceVariation = HeaderSliceDefault;
 export type HeaderSlice = prismic.SharedSlice<'header', HeaderSliceVariation>;
 
 /**
+ * Primary content in *PublicityBanner → Items*
+ */
+export interface PublicityBannerSliceDefaultItem {
+	/**
+	 * Logo field in *PublicityBanner → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: publicity_banner.items[].logo
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo: prismic.ImageField<never>;
+
+	/**
+	 * Short_Description field in *PublicityBanner → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: publicity_banner.items[].short_description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	short_description: prismic.RichTextField;
+
+	/**
+	 * Event_Date field in *PublicityBanner → Items*
+	 *
+	 * - **Field Type**: Date
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: publicity_banner.items[].event_date
+	 * - **Documentation**: https://prismic.io/docs/field#date
+	 */
+	event_date: prismic.DateField;
+
+	/**
+	 * Link field in *PublicityBanner → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: publicity_banner.items[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+}
+
+/**
+ * Default variation for PublicityBanner Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PublicityBannerSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	Simplify<PublicityBannerSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *PublicityBanner*
+ */
+type PublicityBannerSliceVariation = PublicityBannerSliceDefault;
+
+/**
+ * PublicityBanner Shared Slice
+ *
+ * - **API ID**: `publicity_banner`
+ * - **Description**: PublicityBanner
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PublicityBannerSlice = prismic.SharedSlice<
+	'publicity_banner',
+	PublicityBannerSliceVariation
+>;
+
+/**
  * Primary content in *QuickLinks → Items*
  */
 export interface QuickLinksSliceDefaultItem {
@@ -477,6 +557,10 @@ declare module '@prismicio/client' {
 			HeaderSliceDefaultPrimary,
 			HeaderSliceVariation,
 			HeaderSliceDefault,
+			PublicityBannerSlice,
+			PublicityBannerSliceDefaultItem,
+			PublicityBannerSliceVariation,
+			PublicityBannerSliceDefault,
 			QuickLinksSlice,
 			QuickLinksSliceDefaultItem,
 			QuickLinksSliceVariation,
