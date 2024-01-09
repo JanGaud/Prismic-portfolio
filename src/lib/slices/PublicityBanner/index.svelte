@@ -35,7 +35,7 @@
 		<div class="inline-flex gap-20 animate-scrollBanner">
 			{#each events as event (event.uniqueKey)}
 				<PrismicLink field={event.link} class="flex items-center gap-3 min-w-fit">
-					<div class="h-20 w-20 md:w-24">
+					<div class="h-12 w-20 md:w-24">
 						<img
 							class="object-contain h-full w-full"
 							src={event.logo.url}
@@ -54,7 +54,7 @@
 
 <style>
 .animate-scrollBanner {
-    animation: scrollBanner 180s linear infinite;
+    animation: scrollBanner 140s linear infinite;
 }
 
 @media screen and (max-width: 768px) {

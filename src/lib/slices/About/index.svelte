@@ -23,7 +23,7 @@
 
 	<div class="text-fourth text-center flex flex-col justify-center gap-3">
 		<hgroup class="z-30">
-			<h2 class="neonText text-3xl md:text-6xl">
+			<h2 class="neonText text-3xl md:text-6xl mb-3">
 				<PrismicRichText field={slice.primary.about_title} />
 			</h2>
 			<h3 class="md:text-lg"><PrismicRichText field={slice.primary.about_subtitle} /></h3>
