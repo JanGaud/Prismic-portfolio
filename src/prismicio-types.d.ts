@@ -413,6 +413,26 @@ export interface MusicPorfolioSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	bg_img: prismic.ImageField<never>;
+
+	/**
+	 * Big_Title field in *MusicPorfolio → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: music_porfolio.primary.big_title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	big_title: prismic.TitleField;
+
+	/**
+	 * Last_update field in *MusicPorfolio → Primary*
+	 *
+	 * - **Field Type**: Timestamp
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: music_porfolio.primary.last_update
+	 * - **Documentation**: https://prismic.io/docs/field#timestamp
+	 */
+	last_update: prismic.TimestampField;
 }
 
 /**
@@ -420,14 +440,25 @@ export interface MusicPorfolioSliceDefaultPrimary {
  */
 export interface MusicPorfolioSliceDefaultItem {
 	/**
-	 * SoundCloud_Playlist field in *MusicPorfolio → Items*
+	 * Playlist field in *MusicPorfolio → Items*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: music_porfolio.items[].playlist
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	playlist: prismic.BooleanField;
+
+	/**
+	 * Soundcloud_Url field in *MusicPorfolio → Items*
 	 *
 	 * - **Field Type**: Embed
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: music_porfolio.items[].soundcloud_playlist
+	 * - **API ID Path**: music_porfolio.items[].soundcloud_url
 	 * - **Documentation**: https://prismic.io/docs/field#embed
 	 */
-	soundcloud_playlist: prismic.EmbedField;
+	soundcloud_url: prismic.EmbedField;
 }
 
 /**

@@ -19,13 +19,38 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "big_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Big_Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "last_update": {
+          "type": "Timestamp",
+          "config": {
+            "label": "Last_update",
+            "placeholder": ""
+          }
         }
       },
       "items": {
-        "soundcloud_playlist": {
+        "playlist": {
+          "type": "Boolean",
+          "config": {
+            "label": "Playlist",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "soundcloud_url": {
           "type": "Embed",
           "config": {
-            "label": "SoundCloud_Playlist",
+            "label": "Soundcloud_Url",
             "placeholder": ""
           }
         }

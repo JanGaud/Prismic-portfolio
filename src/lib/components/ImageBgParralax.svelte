@@ -7,7 +7,7 @@
 
 <div class="md:-mx-20 -mx-4 h-[1000px]">
     <div class="relative h-full w-full overflow-hidden">
-        	<div class="absolute w-full h-full bg-black opacity-75"></div>
+        	<!-- <div class="absolute w-full h-full bg-black opacity-75 z-20"></div> -->
         <div
             class="parallax-background"
             style="background-image: url({imageUrl});" 
