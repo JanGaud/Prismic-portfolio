@@ -22,7 +22,7 @@
 	}
 </script>
 
-<nav class="fixed top-0 w-full z-50 text-fourth flex justify-between items-center pl-10 pr-7 pt-2">
+<nav class="fixed top-0 w-full z-50 text-fourth flex justify-between items-center px-3 md:pl-10 md:pr-7 pt-2">
 	<div>
 		<a class="drop-shadow-xl" href="/"><PrismicImage width="100" field={brand[0]?.logo} /></a>
 	</div>
