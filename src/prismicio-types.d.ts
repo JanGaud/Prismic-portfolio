@@ -450,6 +450,16 @@ export interface MusicPorfolioSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#timestamp
 	 */
 	last_update: prismic.TimestampField;
+
+	/**
+	 * Spy_Id field in *MusicPorfolio → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: music_porfolio.primary.spy_id
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	spy_id: prismic.KeyTextField;
 }
 
 /**

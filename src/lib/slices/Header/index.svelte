@@ -9,6 +9,7 @@
 	 */
 	export let slice;
 	let headerImg = slice.primary.headerimg.url;
+	let headerlink = slice.primary.headerlink.url;
 
 	let blinkClassName = 'blink';
 
@@ -44,7 +45,7 @@
 	<div class="flex justify-around w-fit z-10">
 		<a
 			class="text-lg md:text-2xl text-fourth px-6 py-4 border-2 border-fourth rounded-full shadow-lg hover:border-third hover:text-third hover:backdrop-blur transition-colors"
-			href="/"
+			href={headerlink}
 		>
 			<Icon icon="gravity-ui:play" />
 		</a>

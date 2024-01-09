@@ -4,15 +4,17 @@
 	import { formatDate } from '$lib/utils/dateParser';
 
 	/**
-	 * @type {{ primary: { bg_img: { url: any; }; big_title: any; last_update: any }; slice_type: any; variation: any; items: any; }}
+	 * @type {{ primary: { bg_img: { url: any; }; big_title: any; last_update: any; spy_id: any }; slice_type: any; variation: any; items: any; }}
 	 */
 	export let slice;
 
 	const bgImg = slice.primary?.bg_img?.url;
+	const section_id = slice.primary?.spy_id;
 
+	console.log(section_id)
 </script>
 
-<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+<section id={section_id} data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
 	<ImageBgParralax imageUrl={bgImg}>
 		<div class="relative h-full w-full flex justify-center">
 			<div class="w-full absolute top-16 left-1/2 transform -translate-x-1/2 z-30">

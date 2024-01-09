@@ -35,6 +35,13 @@
             "label": "Last_update",
             "placeholder": ""
           }
+        },
+        "spy_id": {
+          "type": "Text",
+          "config": {
+            "label": "Spy_Id",
+            "placeholder": ""
+          }
         }
       },
       "items": {
