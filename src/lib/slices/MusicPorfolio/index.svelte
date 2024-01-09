@@ -1,6 +1,7 @@
 <script>
 	import ImageBgParralax from '$lib/components/ImageBgParralax.svelte';
 	import { PrismicRichText } from '@prismicio/svelte';
+	import { formatDate } from '$lib/utils/dateParser';
 
 	/**
 	 * @type {{ primary: { bg_img: { url: any; }; big_title: any; last_update: any }; slice_type: any; variation: any; items: any; }}
@@ -9,13 +10,6 @@
 
 	const bgImg = slice.primary?.bg_img?.url;
 
-	/**
-	 * @param {string | number | Date} dateStr
-	 */
-	function formatDate(dateStr) {
-		const date = new Date(dateStr);
-		return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-	}
 </script>
 
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>

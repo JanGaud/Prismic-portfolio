@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { PrismicLink, PrismicRichText } from '@prismicio/svelte';
+	import { formatDate } from '$lib/utils/dateParser';
 
 	/**
 	 * @type {{ items: any[]; }}
@@ -20,14 +21,6 @@
 		}));
 		events = [...events, ...duplicatedEvents];
 	});
-
-	/**
-	 * @param {string | number | Date} dateStr
-	 */
-	function formatDate(dateStr) {
-		const date = new Date(dateStr);
-		return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-	}
 </script>
 
 <section class="mt-32 h-20 md:h-24 md:-mx-20 -mx-4 border-y-2">
@@ -53,22 +46,22 @@
 </section>
 
 <style>
-.animate-scrollBanner {
-    animation: scrollBanner 140s linear infinite;
-}
+	.animate-scrollBanner {
+		animation: scrollBanner 140s linear infinite;
+	}
 
-@media screen and (max-width: 768px) {
-    .animate-scrollBanner {
-        animation-duration: 60s;
-    }
-}
+	@media screen and (max-width: 768px) {
+		.animate-scrollBanner {
+			animation-duration: 60s;
+		}
+	}
 
-@keyframes scrollBanner {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-90%);
-    }
-}
+	@keyframes scrollBanner {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-90%);
+		}
+	}
 </style>

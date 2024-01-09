@@ -1,13 +1,6 @@
 <script>
 	import { PrismicImage, PrismicRichText } from '@prismicio/svelte';
-
-	/**
-	 * @param {string | number | Date | null} dateStr
-	 */
-	function formatDate(dateStr) {
-		const date = new Date(dateStr);
-		return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-	}
+	import { formatDate } from '$lib/utils/dateParser';
 
 	/** @type {import("@prismicio/client").Content.ArticlesSlice} */
 	export let slice;
@@ -32,7 +25,7 @@
 						<p class="text-fourth text-sm line-clamp-4">
 							<PrismicRichText field={item.articletext} />
 						</p>
-						<small class="text-sm text-fourth">{formatDate(item.articledate)}</small>
+						<small class="text-sm text-fourth">{item.articledate ? formatDate(item.articledate) : ''}</small>
 					</div>
 				</article>
 			{/if}
