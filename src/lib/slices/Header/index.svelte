@@ -32,7 +32,7 @@
 >
 	<div class="absolute w-full h-full bg-black opacity-75"></div>
 
-	<hgroup class="flex flex-col items-center gap-7 md:gap-5 px-6 text-center z-10">
+	<hgroup class="flex flex-col items-center gap-7 md:gap-5 md:pt-14 px-6 text-center z-10">
 		<h2 class="text-5xl md:text-7xl text-white neonText">
 			<PrismicRichText field={slice.primary.title} />
 		</h2>
