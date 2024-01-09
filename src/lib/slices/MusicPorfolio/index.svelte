@@ -10,8 +10,6 @@
 
 	const bgImg = slice.primary?.bg_img?.url;
 	const section_id = slice.primary?.spy_id;
-
-	console.log(section_id)
 </script>
 
 <section id={section_id} data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
