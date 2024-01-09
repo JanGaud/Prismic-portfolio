@@ -21,11 +21,11 @@
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
 	<ImageBgParralax imageUrl={bgImg}>
 		<div class="relative h-full w-full flex justify-center">
-			<div class="w-full absolute top-20 left-1/2 transform -translate-x-1/2 text-white z-10">
+			<div class="w-full absolute top-16 left-1/2 transform -translate-x-1/2 z-30">
 				<h2 class="neonText text-3xl md:text-6xl mb-3 text-center">
 					<PrismicRichText field={slice.primary.big_title} />
 				</h2>
-				<div class="date-container text-center">
+				<div class="date-container text-center text-white">
 					<small>Last update: {formatDate(slice.primary.last_update)}</small>
 				</div>
 			</div>
