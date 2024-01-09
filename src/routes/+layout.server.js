@@ -6,9 +6,10 @@ import { error } from '@sveltejs/kit';
 export async function load({ fetch }) {
     const client = createClient({ fetch })
     const nav = await client.getSingle('nav')
+    const footer = await client.getSingle('footer')
 
-    if (nav) {
-        return { nav }
+    if (nav && footer) {
+        return { nav, footer }
     }
 
     error(404, 'Not found')

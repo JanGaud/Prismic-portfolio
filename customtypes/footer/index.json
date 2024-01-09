@@ -5,6 +5,98 @@
 	"repeatable": false,
 	"status": true,
 	"json": {
-		"Main": {}
+		"Main": {
+			"brand": {
+				"type": "Group",
+				"config": {
+					"label": "Brand",
+					"fields": {
+						"brand_name": {
+							"type": "StructuredText",
+							"config": {
+								"label": "Brand_Name",
+								"placeholder": "",
+								"allowTargetBlank": true,
+								"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+							}
+						},
+						"logo": {
+							"type": "Image",
+							"config": {
+								"label": "Logo",
+								"constraint": {},
+								"thumbnails": []
+							}
+						},
+						"brand_link": {
+							"type": "Link",
+							"config": {
+								"label": "Brand_Link",
+								"placeholder": "",
+								"allowTargetBlank": false,
+								"select": null
+							}
+						}
+					}
+				}
+			},
+			"footer_nav_links": {
+				"type": "Group",
+				"config": {
+					"label": "Footer_Nav_Links",
+					"fields": {
+						"footer_link": {
+							"type": "Link",
+							"config": {
+								"label": "Footer_Link",
+								"placeholder": "",
+								"select": null
+							}
+						},
+						"link_title": {
+							"type": "StructuredText",
+							"config": {
+								"label": "Link_Title",
+								"placeholder": "",
+								"allowTargetBlank": true,
+								"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+							}
+						},
+						"selected_footer_section": {
+							"type": "Select",
+							"config": {
+								"label": "Selected_Footer_Section",
+								"placeholder": "",
+								"options": ["1", "2", "3", "4", "5", "6"]
+							}
+						}
+					}
+				}
+			},
+			"social_nav": {
+				"type": "Group",
+				"config": {
+					"label": "Social_Nav",
+					"fields": {
+						"icon_string": {
+							"type": "StructuredText",
+							"config": {
+								"label": "Icon_String",
+								"placeholder": "",
+								"allowTargetBlank": true,
+								"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+							}
+						},
+						"social_media_name": {
+							"type": "Text",
+							"config": {
+								"label": "Social_Media_Name",
+								"placeholder": ""
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

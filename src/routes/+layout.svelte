@@ -4,6 +4,7 @@
 	import { repositoryName } from '$lib/prismicio';
 	import "../app.css";
 	import Nav from '$lib/components/Nav.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	export let data;
 	</script>
@@ -27,3 +28,4 @@
 	<slot />
 </main>
 <PrismicPreview {repositoryName} />
+<Footer links={data.footer.data.footer_nav_links} brand={data.footer.data.brand} social={data.footer.data.social_nav}/>

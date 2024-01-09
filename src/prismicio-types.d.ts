@@ -4,7 +4,138 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-interface FooterDocumentData {}
+/**
+ * Item in *Footer → Brand*
+ */
+export interface FooterDocumentDataBrandItem {
+	/**
+	 * Brand_Name field in *Footer → Brand*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.brand[].brand_name
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	brand_name: prismic.RichTextField;
+
+	/**
+	 * Logo field in *Footer → Brand*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.brand[].logo
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo: prismic.ImageField<never>;
+
+	/**
+	 * Brand_Link field in *Footer → Brand*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.brand[].brand_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	brand_link: prismic.LinkField;
+}
+
+/**
+ * Item in *Footer → Footer_Nav_Links*
+ */
+export interface FooterDocumentDataFooterNavLinksItem {
+	/**
+	 * Footer_Link field in *Footer → Footer_Nav_Links*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.footer_nav_links[].footer_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	footer_link: prismic.LinkField;
+
+	/**
+	 * Link_Title field in *Footer → Footer_Nav_Links*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.footer_nav_links[].link_title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	link_title: prismic.RichTextField;
+
+	/**
+	 * Selected_Footer_Section field in *Footer → Footer_Nav_Links*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.footer_nav_links[].selected_footer_section
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	selected_footer_section: prismic.SelectField<'1' | '2' | '3' | '4' | '5' | '6'>;
+}
+
+/**
+ * Item in *Footer → Social_Nav*
+ */
+export interface FooterDocumentDataSocialNavItem {
+	/**
+	 * Icon_String field in *Footer → Social_Nav*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.social_nav[].icon_string
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	icon_string: prismic.RichTextField;
+
+	/**
+	 * Social_Media_Name field in *Footer → Social_Nav*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.social_nav[].social_media_name
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	social_media_name: prismic.KeyTextField;
+}
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+	/**
+	 * Brand field in *Footer*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.brand[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	brand: prismic.GroupField<Simplify<FooterDocumentDataBrandItem>>;
+
+	/**
+	 * Footer_Nav_Links field in *Footer*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.footer_nav_links[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	footer_nav_links: prismic.GroupField<Simplify<FooterDocumentDataFooterNavLinksItem>>;
+
+	/**
+	 * Social_Nav field in *Footer*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.social_nav[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	social_nav: prismic.GroupField<Simplify<FooterDocumentDataSocialNavItem>>;
+}
 
 /**
  * Footer document from Prismic
@@ -654,6 +785,9 @@ declare module '@prismicio/client' {
 		export type {
 			FooterDocument,
 			FooterDocumentData,
+			FooterDocumentDataBrandItem,
+			FooterDocumentDataFooterNavLinksItem,
+			FooterDocumentDataSocialNavItem,
 			NavDocument,
 			NavDocumentData,
 			NavDocumentDataBrandItem,
