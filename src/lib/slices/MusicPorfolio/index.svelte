@@ -21,7 +21,7 @@
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
 	<ImageBgParralax imageUrl={bgImg}>
 		<div class="relative h-full w-full flex justify-center">
-			<div class="w-full absolute top-20 left-1/2 transform -translate-x-1/2 text-white z-40">
+			<div class="w-full absolute top-20 left-1/2 transform -translate-x-1/2 text-white z-10">
 				<h2 class="neonText text-3xl md:text-6xl mb-3 text-center">
 					<PrismicRichText field={slice.primary.big_title} />
 				</h2>
@@ -35,7 +35,7 @@
 				{#each slice.items as item}
 					{#if item}
 						<div
-							class="z-30 min-w-[250px] max-w-[250px] min-h-[250px] max-h-[250px] shadow-2xl overflow-hidden"
+							class="z-30 min-w-[250px] max-w-[250px] min-h-[250px] rounded-md max-h-[250px] shadow-2xl overflow-hidden"
 						>
 							{@html item.soundcloud_url.html}
 						</div>
