@@ -14,11 +14,11 @@
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation} class="relative">
     <ImageBgParralax imageUrl={bgImg}>
         <div class="text-white">
-            {#each slice.items as item}
+            <!-- {#each slice.items as item}
                 {#if item}
                     {@html item.soundcloud_playlist.html}
                 {/if}
-            {/each}
+            {/each} -->
         </div>
     </ImageBgParralax>
 </section>
