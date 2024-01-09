@@ -30,7 +30,7 @@
 				</div>
 			</div>
 			<div
-				class="h-full backdrop-blur-xl shadow px-8 py-56 grid grid-cols-1 md:grid-cols-2 justify-items-around gap-20 items-center overflow-hidden overflow-y-scroll"
+				class="h-full backdrop-blur-xl shadow px-8 py-56 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 justify-items-around gap-20 items-center overflow-hidden overflow-y-scroll"
 			>
 				{#each slice.items as item}
 					{#if item}
