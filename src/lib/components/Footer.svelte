@@ -67,7 +67,7 @@
 			>
 				{#if links}
 					{#each Object.keys(sections) as section}
-						<ul class="flex flex-col gap-2">
+						<ul class="flex flex-col gap-2 border-t p-2 border-secondary md:border-none">
 							{#each sections[section] as link}
 								<li
 									class="w-fit transform border-b-2 border-b-transparent hover:border-b-2 hover:border-fourth transition-transform"
@@ -82,7 +82,7 @@
 				{/if}
 			</div>
 		</div>
-		<div class="flex flex-wrap-reverse gap-6 justify-between items-center pb-2">
+		<div class="flex flex-wrap-reverse gap-6 justify-around sm:justify-between items-center pb-2">
 			<div class="flex gap-10">
 				{#if copyright && brand}
 					<small class="flex items-center gap-1 text-lg"

@@ -24,10 +24,10 @@
 </script>
 
 {#if social_active}
-    <div class="flex flex-col gap-5 fixed top-1/2 -translate-y-1/2 right-0 z-40">
+    <div class="hidden sm:flex flex-col gap-5 fixed top-1/2 -translate-y-1/2 right-0 z-40">
         <ul class="rounded-2xl">
             {#each social.filter((item) => item && item.social_media_link) as item}
-                <li class="w-[300px] backdrop-blur-lg rounded-3xl px-2 h-14 flex justify-between items-center mr-[-254px] hover:ml-[-210px] duration-500">
+                <li class="w-[300px] backdrop-blur-3xl rounded-3xl px-2 h-14 flex justify-between items-center mr-[-254px] hover:ml-[-210px] duration-500">
                     <PrismicLink field={item.social_media_link} class="flex justify-between items-center w-full">
                         <div class="flex items-center gap-3">
                             <Icon
