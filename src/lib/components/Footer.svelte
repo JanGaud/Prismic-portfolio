@@ -50,14 +50,14 @@
 </script>
 
 <footer class="text-fourth w-full border-y-2 h-fit px-6 py-2">
-	<div class="flex flex-col justify-between flex-wrap gap-10">
-		<div class="flex justify-between border-b border-gray-500 py-5">
+	<div class="flex flex-col justify-between flex-wrap gap-5">
+		<div class="flex border-b border-gray-500 py-5">
 			<div class="grayscale">
 				<a class="drop-shadow-xl" href="/">
-					<PrismicImage width="60" field={brand[0]?.logo} />
+					<PrismicImage class="min-w-24" width="100%" height="auto" field={brand[0]?.logo} />
 				</a>
 			</div>
-			<div class="w-full ml-10 flex flex-wrap md:justify-around gap-10">
+			<div class="w-full ml-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center md:justify-items-end gap-10">
 				{#if links}
 					{#each Object.keys(sections) as section}
 						<ul class="flex flex-col gap-2">
@@ -73,7 +73,7 @@
 				{/if}
 			</div>
 		</div>
-		<div class="flex flex-wrap gap-2 justify-center md:justify-between items-center pb-4">
+		<div class="flex flex-wrap-reverse gap-2 justify-center md:justify-between items-center pb-2">
 			<div class="flex gap-10">
 				{#if copyright && brand}
 					<small class="flex items-center gap-1 text-lg"
