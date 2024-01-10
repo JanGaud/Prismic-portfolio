@@ -27,7 +27,6 @@
 		<a class="drop-shadow-xl" href="/"><PrismicImage width="100" field={brand[0]?.logo} /></a>
 	</div>
 
-	<!-- Desktop Menu -->
 	<ul
 		class="hidden md:flex w-fit items-end justify-end gap-10 px-6 py-2 backdrop-blur-md rounded-2xl"
 	>
