@@ -63,7 +63,7 @@
 				</a>
 			</div>
 			<div
-				class="w-full ml-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center md:justify-items-end gap-10"
+				class="w-full ml-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-end sm:justify-items-end gap-10"
 			>
 				{#if links}
 					{#each Object.keys(sections) as section}
@@ -82,7 +82,7 @@
 				{/if}
 			</div>
 		</div>
-		<div class="flex flex-wrap-reverse gap-6 justify-center md:justify-between items-center pb-2">
+		<div class="flex flex-wrap-reverse gap-6 justify-between items-center pb-2">
 			<div class="flex gap-10">
 				{#if copyright && brand}
 					<small class="flex items-center gap-1 text-lg"
@@ -98,8 +98,8 @@
 						<PrismicLink field={item.social_media_link}>
 							<Icon
 							class="hover:text-third transition-colors"
-								width="20"
-								height="20"
+								width="16"
+								height="16"
 								icon={extractIconIdentifier(item.icon_string)}
 							/>
 						</PrismicLink>
