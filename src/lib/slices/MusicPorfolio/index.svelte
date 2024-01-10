@@ -4,16 +4,17 @@
 	import { formatDate } from '$lib/utils/dateParser';
 
 	/**
-	 * @type {{ primary: { bg_img: { url: any; }; big_title: any; last_update: any; spy_id: any }; slice_type: any; variation: any; items: any; }}
+	 * @type {{ primary: { bg_img: { url: any; }; big_title: any; last_update: any; spy_id: any; img_grayscaled: boolean; }; slice_type: any; variation: any; items: any; }}
 	 */
 	export let slice;
 
 	const bgImg = slice.primary?.bg_img?.url;
 	const section_id = slice.primary?.spy_id;
+	const grayscale = slice.primary?.img_grayscaled;
 </script>
 
 <section id={section_id} data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-	<ImageBgParralax imageUrl={bgImg}>
+	<ImageBgParralax imageUrl={bgImg} grayscale={grayscale}>
 		<div class="relative h-full w-full flex justify-center">
 			<div class="w-full absolute top-16 left-1/2 transform -translate-x-1/2 z-30">
 				<h2 class="neonText-red text-3xl md:text-6xl mb-3 text-center">
@@ -24,7 +25,7 @@
 				</div>
 			</div>
 			<div
-				class="h-full backdrop-blur-xl shadow px-2 md:px-8 py-56 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 justify-items-around gap-20 items-center overflow-hidden overflow-y-scroll"
+				class="h-full backdrop-blur-xl shadow px-2 md:px-8 pt-56 pb-28 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 justify-items-around gap-20 items-center overflow-hidden overflow-y-scroll"
 			>
 				{#each slice.items as item}
 					{#if item}

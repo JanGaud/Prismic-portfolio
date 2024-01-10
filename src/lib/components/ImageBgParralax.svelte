@@ -1,25 +1,32 @@
 <script>
-	/**
-	 * @type {any}
-	 */
-	export let imageUrl;
+  /**
+   * @type {any}
+   */
+  export let imageUrl;
+  export let grayscale = false;
 </script>
 
 <div class="md:-mx-20 -mx-4 h-[1000px]">
-	<div class="relative h-full w-full overflow-hidden">
-		<div class="parallax-background" style="background-image: url({imageUrl});"></div>
+  <div class="relative h-full w-full overflow-hidden">
+    <div
+      class="parallax-background"
+      style="
+        background-image: url({imageUrl});
+        filter: grayscale({grayscale ? '100%' : '0%'});
+      "
+    ></div>
 
-		<div
-			class="w-full h-40 absolute top-0 z-20"
-			style="background: rgb(255,255,255);
-background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3925945378151261) 11%, rgba(0,0,0,0.7035189075630253) 21%, rgba(0,0,0,1) 34%);"
-		></div>
+    <div
+      class="w-full h-40 absolute top-0 z-20"
+      style="background: rgb(255,255,255);
+      background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3925945378151261) 11%, rgba(0,0,0,0.7035189075630253) 21%, rgba(0,0,0,1) 34%);"
+    ></div>
 
-		<slot />
+    <slot />
 
-		<div
-			class="w-full h-40 absolute bottom-0 z-20"
-			style="background: linear-gradient(180deg, rgba(255,255,255,0) 7%, rgba(0,0,0,0.3925945378151261) 29%, rgba(0,0,0,0.7035189075630253) 55%, rgba(0,0,0,1) 93%)"
-		></div>
-	</div>
+    <div
+      class="w-full h-40 absolute bottom-0 z-20"
+      style="background: linear-gradient(180deg, rgba(255,255,255,0) 7%, rgba(0,0,0,0.3925945378151261) 29%, rgba(0,0,0,0.7035189075630253) 55%, rgba(0,0,0,1) 93%)"
+    ></div>
+  </div>
 </div>

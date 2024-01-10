@@ -12,7 +12,7 @@
 
 <section
 	style="background-image: url({headerImg}); background-size: cover; background-position: center;"
-	class="relative overflow-hidden h-screen md:h-[400px] md:-my-12 md:-mx-20 -my-10 -mx-4 flex flex-col justify-center items-center gap-6 px-4 py-8 bg-primary"
+	class="relative overflow-hidden h-screen md:h-[950px] lg:h-[400px] md:-my-12 md:-mx-20 -my-10 -mx-4 flex flex-col justify-center items-center gap-6 px-4 py-8 bg-primary"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >

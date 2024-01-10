@@ -637,23 +637,23 @@ export interface MusicPorfolioSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	spy_id: prismic.KeyTextField;
+
+	/**
+	 * Img_Grayscaled field in *MusicPorfolio → Primary*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: music_porfolio.primary.img_grayscaled
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	img_grayscaled: prismic.BooleanField;
 }
 
 /**
  * Primary content in *MusicPorfolio → Items*
  */
 export interface MusicPorfolioSliceDefaultItem {
-	/**
-	 * Playlist field in *MusicPorfolio → Items*
-	 *
-	 * - **Field Type**: Boolean
-	 * - **Placeholder**: *None*
-	 * - **Default Value**: false
-	 * - **API ID Path**: music_porfolio.items[].playlist
-	 * - **Documentation**: https://prismic.io/docs/field#boolean
-	 */
-	playlist: prismic.BooleanField;
-
 	/**
 	 * Soundcloud_Url field in *MusicPorfolio → Items*
 	 *

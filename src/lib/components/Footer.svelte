@@ -57,12 +57,16 @@
 					<PrismicImage class="min-w-24" width="100%" height="auto" field={brand[0]?.logo} />
 				</a>
 			</div>
-			<div class="w-full ml-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center md:justify-items-end gap-10">
+			<div
+				class="w-full ml-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center md:justify-items-end gap-10"
+			>
 				{#if links}
 					{#each Object.keys(sections) as section}
 						<ul class="flex flex-col gap-2">
 							{#each sections[section] as link}
-								<li>
+								<li
+									class="w-fit transform border-b-2 border-b-transparent hover:border-b-2 hover:border-fourth transition-transform"
+								>
 									<PrismicLink field={link.footer_link}>
 										<PrismicRichText field={link.link_title} />
 									</PrismicLink>

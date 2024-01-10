@@ -46,19 +46,16 @@
 				"__TYPE__": "FieldContent",
 				"value": "worry",
 				"type": "Text"
+			},
+			"img_grayscaled": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
 				"value": [
-					[
-						"playlist",
-						{
-							"__TYPE__": "BooleanContent",
-							"value": true
-						}
-					],
 					[
 						"soundcloud_url",
 						{

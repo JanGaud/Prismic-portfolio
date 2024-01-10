@@ -42,18 +42,18 @@
             "label": "Spy_Id",
             "placeholder": ""
           }
-        }
-      },
-      "items": {
-        "playlist": {
+        },
+        "img_grayscaled": {
           "type": "Boolean",
           "config": {
-            "label": "Playlist",
+            "label": "Img_Grayscaled",
             "default_value": false,
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
-        },
+        }
+      },
+      "items": {
         "soundcloud_url": {
           "type": "Embed",
           "config": {
