@@ -97,9 +97,9 @@
 					{#if item && social_active == true}
 						<PrismicLink field={item.social_media_link}>
 							<Icon
-							class="hover:text-primary transition-colors"
-								width="30"
-								height="30"
+							class="hover:text-third transition-colors"
+								width="20"
+								height="20"
 								icon={extractIconIdentifier(item.icon_string)}
 							/>
 						</PrismicLink>

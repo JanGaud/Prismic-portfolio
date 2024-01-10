@@ -370,6 +370,16 @@ export interface SocialNavigationDocumentDataSocialNavItem {
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
 	social_media_link: prismic.LinkField;
+
+	/**
+	 * Invitation_Text field in *SocialNavigation → Social_Nav*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Visit my media page
+	 * - **API ID Path**: social_navigation.social_nav[].description_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description_text: prismic.RichTextField;
 }
 
 /**

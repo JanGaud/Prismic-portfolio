@@ -1,17 +1,16 @@
 <script>
 	import Icon from '@iconify/svelte';
-	import { PrismicLink } from '@prismicio/svelte';
+	import { PrismicLink, PrismicRichText } from '@prismicio/svelte';
 
-    /**
-     * @type {import('../../prismicio-types').SocialNavigationDocumentData["activate_social_links"]}
-     */
+	/**
+	 * @type {import('../../prismicio-types').SocialNavigationDocumentData["activate_social_links"]}
+	 */
 	export let social_active;
 
-    /**
-     * @type {import('../../prismicio-types').SocialNavigationDocumentData["social_nav"]}
-     */
-
-	 export let social;
+	/**
+	 * @type {import('../../prismicio-types').SocialNavigationDocumentData["social_nav"]}
+	 */
+	export let social;
 
 	/**
 	 * @param {string | any[]} richtext
@@ -25,16 +24,25 @@
 </script>
 
 {#if social_active}
-	{#each social.filter(item => item && item.social_media_link) as item}
-		<div class="w-20 h-60 border border-red-500 fixed top-1/2 transform -translate-y-1/2 right-0 z-40">
-			<PrismicLink field={item.social_media_link}>
-				<Icon
-					width="30"
-					height="30"
-					class="neonIcon-red"
-					icon={extractIconIdentifier(item.icon_string)}
-				/>
-			</PrismicLink>
-		</div>
-	{/each}
+    <div class="flex flex-col gap-5 fixed top-1/2 -translate-y-1/2 right-2 z-40">
+        <ul>
+            {#each social.filter((item) => item && item.social_media_link) as item}
+                <li class="w-[300px] backdrop-blur-sm rounded-2xl px-2 h-14 flex justify-between items-center mr-[-256px] hover:ml-[-200px] duration-500">
+                    <PrismicLink field={item.social_media_link} class="flex justify-between items-center w-full">
+                        <div class="flex items-center gap-3">
+                            <Icon
+                                width="33"
+                                height="33"
+                                class="neonIcon-red text-white"
+                                icon={extractIconIdentifier(item.icon_string)}
+                            />
+                            <p class="text-white text-sm max-w-[240px]">
+                                <PrismicRichText field={item.description_text} />
+                            </p>
+                        </div>
+                    </PrismicLink>
+                </li>
+            {/each}
+        </ul>
+    </div>
 {/if}
