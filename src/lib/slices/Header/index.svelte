@@ -36,7 +36,7 @@
 		</a>
 	</div>
 	<div
-		class="absolute w-full bottom-0 h-40"
+		class="absolute w-full bottom-0 h-20"
 		style="background: rgb(0,0,0);
     	background: linear-gradient(0deg, rgba(0,0,0,0.87718837535014) 0%, rgba(255,255,255,0) 84%);"
 	></div>
