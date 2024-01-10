@@ -16,7 +16,7 @@
 	<ImageBgParralax imageUrl={bgImg}>
 		<div class="relative h-full w-full flex justify-center">
 			<div class="w-full absolute top-16 left-1/2 transform -translate-x-1/2 z-30">
-				<h2 class="neonText text-3xl md:text-6xl mb-3 text-center">
+				<h2 class="neonText-red text-3xl md:text-6xl mb-3 text-center">
 					<PrismicRichText field={slice.primary.big_title} />
 				</h2>
 				<div class="date-container text-center text-white">
@@ -29,7 +29,7 @@
 				{#each slice.items as item}
 					{#if item}
 						<div
-							class="z-30 min-w-[250px] max-w-[250px] min-h-[250px] rounded-md max-h-[250px] shadow-2xl overflow-hidden"
+							class="z-30 min-w-[250px] max-w-[250px] min-h-[250px] max-h-[250px] rounded-md shadow-2xl overflow-hidden"
 						>
 							{@html item.soundcloud_url.html}
 						</div>
@@ -39,18 +39,3 @@
 		</div>
 	</ImageBgParralax>
 </section>
-
-<style>
-	.neonText {
-		color: #fff;
-		text-shadow:
-			0 0 7px #fff,
-			0 0 10px #fff,
-			0 0 21px #fff,
-			0 0 42px #f82124,
-			0 0 82px #f82124,
-			0 0 92px #f82124,
-			0 0 102px #f82124,
-			0 0 151px #f82124;
-	}
-</style>

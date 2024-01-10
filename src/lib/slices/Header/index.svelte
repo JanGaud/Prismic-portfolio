@@ -1,6 +1,5 @@
 <script>
 	import { PrismicRichText, PrismicLink } from '@prismicio/svelte';
-	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
 
 	/**
@@ -9,19 +8,6 @@
 	export let slice;
 	let headerImg = slice.primary.headerimg.url;
 	let headerlink = slice.primary.headerlink.url;
-
-	let blinkClassName = 'blink';
-
-	onMount(() => {
-		function blink() {
-			const elements = document.querySelectorAll('.neonText');
-			elements.forEach((element) => {
-				element.classList.toggle(blinkClassName);
-			});
-			setTimeout(blink, Math.random() * 2000 + 500);
-		}
-		blink();
-	});
 </script>
 
 <section
@@ -33,7 +19,7 @@
 	<div class="absolute w-full h-full bg-black opacity-75"></div>
 
 	<hgroup class="flex flex-col items-center gap-7 md:gap-5 md:pt-14 px-6 text-center z-10">
-		<h2 class="text-5xl md:text-7xl text-white neonText">
+		<h2 class="text-5xl md:text-7xl text-white neonText-blue">
 			<PrismicRichText field={slice.primary.title} />
 		</h2>
 		<h3 class="text-2xl md:text-3xl text-white neonText">
@@ -52,25 +38,6 @@
 	<div
 		class="absolute w-full bottom-0 h-40"
 		style="background: rgb(0,0,0);
-    	background: linear-gradient(0deg, rgba(0,0,0,0.87718837535014) 0%, rgba(255,255,255,0) 84%);">
-</div>
+    	background: linear-gradient(0deg, rgba(0,0,0,0.87718837535014) 0%, rgba(255,255,255,0) 84%);"
+	></div>
 </section>
-
-<style>
-	.neonText {
-		color: #fff;
-		text-shadow:
-			0 0 7px #fff,
-			0 0 10px #fff,
-			0 0 21px #fff,
-			0 0 42px #368084,
-			0 0 82px #368084,
-			0 0 92px #368084,
-			0 0 102px #368084,
-			0 0 151px #6ebfc4;
-	}
-
-	:global(.blink) {
-		opacity: 0.8;
-	}
-</style>

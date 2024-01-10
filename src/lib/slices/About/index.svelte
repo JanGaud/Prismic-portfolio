@@ -23,7 +23,7 @@
 
 	<div class="text-fourth text-center flex flex-col justify-center gap-3">
 		<hgroup class="z-30">
-			<h2 class="neonText text-3xl md:text-6xl mb-3">
+			<h2 class="neonText-red text-3xl md:text-6xl mb-3">
 				<PrismicRichText field={slice.primary.about_title} />
 			</h2>
 			<h3 class="md:text-lg"><PrismicRichText field={slice.primary.about_subtitle} /></h3>
@@ -37,18 +37,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.neonText {
-		color: #fff;
-		text-shadow:
-			0 0 7px #fff,
-			0 0 10px #fff,
-			0 0 21px #fff,
-			0 0 42px #f82124,
-			0 0 82px #f82124,
-			0 0 92px #f82124,
-			0 0 102px #f82124,
-			0 0 151px #f82124;
-	}
-</style>

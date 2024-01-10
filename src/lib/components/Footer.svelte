@@ -11,9 +11,14 @@
 
 	export let brand;
 
-	/** @type {import('../../prismicio-types').FooterDocumentData["social_nav"]} */
+	// /** @type {import('../../prismicio-types').FooterDocumentData["social_nav"]} */
 
-	export let social;
+	// export let social;
+
+	/** @type {import('../../prismicio-types').FooterDocumentData["copyright"]} */
+
+	export let copyright;
+
 
 	let sections = {};
 
@@ -21,12 +26,11 @@
 		links.forEach((link) => {
 			if (link.selected_footer_section) {
 				const sectionKey = link.selected_footer_section.toString();
-			
+
 				if (!sections[sectionKey]) {
-				
 					sections[sectionKey] = [];
 				}
-			
+
 				sections[sectionKey].push(link);
 			}
 		});
@@ -37,7 +41,7 @@
 	}
 </script>
 
-<footer class="text-white w-full border-y-2 h-fit px-6 py-2">
+<footer class="text-fourth w-full border-y-2 h-fit px-6 py-2">
 	<div class="flex flex-col justify-between flex-wrap gap-10">
 		<div class="flex justify-between border-b border-gray-500 py-5">
 			<div class="grayscale">
@@ -61,10 +65,13 @@
 				{/if}
 			</div>
 		</div>
-		<div class="flex gap-10">
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
+		<div>
+			<div></div>
+			<div class="flex gap-10">
+				{#if copyright && brand}
+					<small class="flex items-center gap-1 text-lg"><PrismicRichText field={copyright[0].copyright_text} /><em class="neonText-blue"><PrismicRichText field={brand[0].brand_name} /></em></small>
+				{/if}
+			</div>
 		</div>
 	</div>
 </footer>

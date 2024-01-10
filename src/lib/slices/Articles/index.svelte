@@ -21,7 +21,7 @@
 						<PrismicImage field={item.articleimg} />
 					</header>
 					<div class="p-2 flex flex-col justify-between gap-2 border-t-2 border-r-2 border-third">
-						<h2 class="neonText text-lg"><PrismicRichText field={item.articletitle} /></h2>
+						<h2 class="neonText-blue text-lg"><PrismicRichText field={item.articletitle} /></h2>
 						<p class="text-fourth text-sm line-clamp-4">
 							<PrismicRichText field={item.articletext} />
 						</p>
@@ -32,20 +32,3 @@
 		{/each}
 	</div>
 </section>
-
-
-<style>
-	.neonText {
-		color: #fff;
-		text-shadow:
-			0 0 7px #fff,
-			0 0 10px #fff,
-			0 0 21px #fff,
-			0 0 42px #368084,
-			0 0 82px #368084,
-			0 0 92px #368084,
-			0 0 102px #368084,
-			0 0 151px #6ebfc4;
-	}
-
-</style>

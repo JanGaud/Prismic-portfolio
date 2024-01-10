@@ -69,3 +69,36 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+/* Neon FX  */
+
+.neonText-blue {
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #368084,
+        0 0 82px #368084,
+        0 0 92px #368084,
+        0 0 102px #368084,
+        0 0 151px #6ebfc4;
+}
+
+.neonText-red {
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #f82124,
+        0 0 82px #f82124,
+        0 0 92px #f82124,
+        0 0 102px #f82124,
+        0 0 151px #f82124;
+}
+
+.blink {
+    opacity: 0.8;
+}

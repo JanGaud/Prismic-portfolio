@@ -100,6 +100,31 @@ export interface FooterDocumentDataSocialNavItem {
 }
 
 /**
+ * Item in *Footer → Copyright*
+ */
+export interface FooterDocumentDataCopyrightItem {
+	/**
+	 * Copyright_Text field in *Footer → Copyright*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.copyright[].copyright_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	copyright_text: prismic.RichTextField;
+
+	/**
+	 * Copyright_Date field in *Footer → Copyright*
+	 *
+	 * - **Field Type**: Date
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.copyright[].copyright_date
+	 * - **Documentation**: https://prismic.io/docs/field#date
+	 */
+	copyright_date: prismic.DateField;
+}
+
+/**
  * Content for Footer documents
  */
 interface FooterDocumentData {
@@ -135,6 +160,17 @@ interface FooterDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
 	social_nav: prismic.GroupField<Simplify<FooterDocumentDataSocialNavItem>>;
+
+	/**
+	 * Copyright field in *Footer*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.copyright[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	copyright: prismic.GroupField<Simplify<FooterDocumentDataCopyrightItem>>;
 }
 
 /**
@@ -788,6 +824,7 @@ declare module '@prismicio/client' {
 			FooterDocumentDataBrandItem,
 			FooterDocumentDataFooterNavLinksItem,
 			FooterDocumentDataSocialNavItem,
+			FooterDocumentDataCopyrightItem,
 			NavDocument,
 			NavDocumentData,
 			NavDocumentDataBrandItem,

@@ -2,12 +2,18 @@
 	import { PrismicPreview } from '@prismicio/svelte/kit';
 	import { page } from '$app/stores';
 	import { repositoryName } from '$lib/prismicio';
-	import "../app.css";
+	import '../app.css';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { onMount } from 'svelte';
+	import { startBlinking } from '$lib/utils/neonBlink';
 
+	onMount(() => {
+		startBlinking();
+	});
+	
 	export let data;
-	</script>
+</script>
 
 <svelte:head>
 	<title>{$page.data.title}</title>
@@ -28,4 +34,9 @@
 	<slot />
 </main>
 <PrismicPreview {repositoryName} />
-<Footer links={data.footer.data.footer_nav_links} brand={data.footer.data.brand} social={data.footer.data.social_nav}/>
+<Footer
+	links={data.footer.data.footer_nav_links}
+	brand={data.footer.data.brand}
+	copyright={data.footer.data.copyright}
+/>
+<!-- <Footer links={data.footer.data.footer_nav_links} brand={data.footer.data.brand} social={data.footer.data.social_nav} copyright={data.footer.data.copyright}/> -->
