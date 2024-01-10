@@ -1,0 +1,58 @@
+{
+	"id": "social_navigation",
+	"label": "SocialNavigation",
+	"format": "custom",
+	"repeatable": true,
+	"status": true,
+	"json": {
+		"Main": {
+			"uid": {
+				"config": {
+					"label": "UID"
+				},
+				"type": "UID"
+			},
+			"social_nav": {
+				"type": "Group",
+				"config": {
+					"label": "Social_Nav",
+					"fields": {
+						"icon_string": {
+							"type": "StructuredText",
+							"config": {
+								"label": "Icon_string",
+								"placeholder": "",
+								"allowTargetBlank": true,
+								"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+							}
+						},
+						"social_media_name": {
+							"type": "Text",
+							"config": {
+								"label": "Social_Media_Name",
+								"placeholder": ""
+							}
+						},
+						"social_media_link": {
+							"type": "Link",
+							"config": {
+								"label": "Social_Media_Link",
+								"placeholder": "",
+								"select": null
+							}
+						}
+					}
+				}
+			},
+			"activate_social_links": {
+				"type": "Boolean",
+				"config": {
+					"label": "Activate_Social_Links",
+					"default_value": false,
+					"placeholder_true": "true",
+					"placeholder_false": "false"
+				}
+			}
+		}
+	}
+}

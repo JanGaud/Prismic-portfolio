@@ -75,41 +75,6 @@ export interface FooterDocumentDataFooterNavLinksItem {
 }
 
 /**
- * Item in *Footer → Social_Nav*
- */
-export interface FooterDocumentDataSocialNavItem {
-	/**
-	 * Icon_String field in *Footer → Social_Nav*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: footer.social_nav[].icon_string
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	icon_string: prismic.RichTextField;
-
-	/**
-	 * Social_Media_Name field in *Footer → Social_Nav*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: footer.social_nav[].social_media_name
-	 * - **Documentation**: https://prismic.io/docs/field#key-text
-	 */
-	social_media_name: prismic.KeyTextField;
-
-	/**
-	 * Social_Media_Link field in *Footer → Social_Nav*
-	 *
-	 * - **Field Type**: Link
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: footer.social_nav[].social_media_link
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	social_media_link: prismic.LinkField;
-}
-
-/**
  * Item in *Footer → Copyright*
  */
 export interface FooterDocumentDataCopyrightItem {
@@ -161,17 +126,6 @@ interface FooterDocumentData {
 	footer_nav_links: prismic.GroupField<Simplify<FooterDocumentDataFooterNavLinksItem>>;
 
 	/**
-	 * Social_Nav field in *Footer*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: footer.social_nav[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#group
-	 */
-	social_nav: prismic.GroupField<Simplify<FooterDocumentDataSocialNavItem>>;
-
-	/**
 	 * Copyright field in *Footer*
 	 *
 	 * - **Field Type**: Group
@@ -181,6 +135,18 @@ interface FooterDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
 	copyright: prismic.GroupField<Simplify<FooterDocumentDataCopyrightItem>>;
+
+	/**
+	 * Activate_Social_Links field in *Footer*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: footer.activate_social_links
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	activate_social_links: prismic.BooleanField;
 }
 
 /**
@@ -371,7 +337,89 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 	Lang
 >;
 
-export type AllDocumentTypes = FooterDocument | NavDocument | PageDocument;
+/**
+ * Item in *SocialNavigation → Social_Nav*
+ */
+export interface SocialNavigationDocumentDataSocialNavItem {
+	/**
+	 * Icon_string field in *SocialNavigation → Social_Nav*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: social_navigation.social_nav[].icon_string
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	icon_string: prismic.RichTextField;
+
+	/**
+	 * Social_Media_Name field in *SocialNavigation → Social_Nav*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: social_navigation.social_nav[].social_media_name
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	social_media_name: prismic.KeyTextField;
+
+	/**
+	 * Social_Media_Link field in *SocialNavigation → Social_Nav*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: social_navigation.social_nav[].social_media_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	social_media_link: prismic.LinkField;
+}
+
+/**
+ * Content for SocialNavigation documents
+ */
+interface SocialNavigationDocumentData {
+	/**
+	 * Social_Nav field in *SocialNavigation*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: social_navigation.social_nav[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	social_nav: prismic.GroupField<Simplify<SocialNavigationDocumentDataSocialNavItem>>;
+
+	/**
+	 * Activate_Social_Links field in *SocialNavigation*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: social_navigation.activate_social_links
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	activate_social_links: prismic.BooleanField;
+}
+
+/**
+ * SocialNavigation document from Prismic
+ *
+ * - **API ID**: `social_navigation`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SocialNavigationDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
+	Simplify<SocialNavigationDocumentData>,
+	'social_navigation',
+	Lang
+>;
+
+export type AllDocumentTypes =
+	| FooterDocument
+	| NavDocument
+	| PageDocument
+	| SocialNavigationDocument;
 
 /**
  * Primary content in *About → Primary*
@@ -833,7 +881,6 @@ declare module '@prismicio/client' {
 			FooterDocumentData,
 			FooterDocumentDataBrandItem,
 			FooterDocumentDataFooterNavLinksItem,
-			FooterDocumentDataSocialNavItem,
 			FooterDocumentDataCopyrightItem,
 			NavDocument,
 			NavDocumentData,
@@ -842,6 +889,9 @@ declare module '@prismicio/client' {
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
+			SocialNavigationDocument,
+			SocialNavigationDocumentData,
+			SocialNavigationDocumentDataSocialNavItem,
 			AllDocumentTypes,
 			AboutSlice,
 			AboutSliceDefaultPrimary,

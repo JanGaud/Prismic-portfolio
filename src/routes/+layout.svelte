@@ -7,6 +7,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { onMount } from 'svelte';
 	import { startBlinking } from '$lib/utils/neonBlink';
+	import SocialNav from '$lib/components/SocialNav.svelte';
 
 	onMount(() => {
 		startBlinking();
@@ -32,6 +33,7 @@
 <Nav links={data.nav.data.links} brand={data.nav.data.brand} />
 <main class="md:my-12 md:mx-20 my-10 mx-4">
 	<slot />
+	<SocialNav social_active={data.social.data.activate_social_links} social={data.social.data.social_nav}/>
 </main>
 <PrismicPreview {repositoryName} />
-<Footer links={data.footer.data.footer_nav_links} brand={data.footer.data.brand} social={data.footer.data.social_nav} copyright={data.footer.data.copyright}/>
+<Footer links={data.footer.data.footer_nav_links} brand={data.footer.data.brand} social={data.social.data.social_nav} copyright={data.footer.data.copyright} social_active={data.footer.data.activate_social_links}/>

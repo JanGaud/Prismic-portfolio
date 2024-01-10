@@ -21,6 +21,11 @@
 
 	export let copyright;
 
+	/** @type {import('../../prismicio-types').FooterDocumentData["activate_social_links"]} */
+
+	export let social_active;
+
+
 	let sections = {};
 
 	function distributeLinks() {
@@ -89,12 +94,12 @@
 			</div>
 			<div class="flex gap-4">
 				{#each social as item}
-					{#if item}
+					{#if item && social_active == true}
 						<PrismicLink field={item.social_media_link}>
 							<Icon
+							class="hover:text-primary transition-colors"
 								width="30"
 								height="30"
-								class="neonIcon-red"
 								icon={extractIconIdentifier(item.icon_string)}
 							/>
 						</PrismicLink>
