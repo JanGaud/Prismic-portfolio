@@ -93,6 +93,14 @@
 								"label": "Social_Media_Name",
 								"placeholder": ""
 							}
+						},
+						"social_media_link": {
+							"type": "Link",
+							"config": {
+								"label": "Social_Media_Link",
+								"placeholder": "",
+								"select": null
+							}
 						}
 					}
 				}

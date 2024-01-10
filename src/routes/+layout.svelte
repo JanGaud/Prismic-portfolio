@@ -34,9 +34,4 @@
 	<slot />
 </main>
 <PrismicPreview {repositoryName} />
-<Footer
-	links={data.footer.data.footer_nav_links}
-	brand={data.footer.data.brand}
-	copyright={data.footer.data.copyright}
-/>
-<!-- <Footer links={data.footer.data.footer_nav_links} brand={data.footer.data.brand} social={data.footer.data.social_nav} copyright={data.footer.data.copyright}/> -->
+<Footer links={data.footer.data.footer_nav_links} brand={data.footer.data.brand} social={data.footer.data.social_nav} copyright={data.footer.data.copyright}/>

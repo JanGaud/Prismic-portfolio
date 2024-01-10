@@ -1,6 +1,8 @@
 <script>
 	// @ts-nocheck
 
+	import Icon from '@iconify/svelte';
+
 	import { PrismicImage, PrismicLink, PrismicRichText } from '@prismicio/svelte';
 
 	/** @type {import('../../prismicio-types').FooterDocumentData["footer_nav_links"]} */
@@ -11,14 +13,13 @@
 
 	export let brand;
 
-	// /** @type {import('../../prismicio-types').FooterDocumentData["social_nav"]} */
+	/** @type {import('../../prismicio-types').FooterDocumentData["social_nav"]} */
 
-	// export let social;
+	export let social;
 
 	/** @type {import('../../prismicio-types').FooterDocumentData["copyright"]} */
 
 	export let copyright;
-
 
 	let sections = {};
 
@@ -38,6 +39,13 @@
 
 	if (links) {
 		distributeLinks();
+	}
+
+	function extractIconIdentifier(richtext) {
+		if (richtext && richtext.length > 0 && richtext[0].type === 'paragraph') {
+			return richtext[0].text;
+		}
+		return '';
 	}
 </script>
 
@@ -65,12 +73,29 @@
 				{/if}
 			</div>
 		</div>
-		<div>
-			<div></div>
+		<div class="flex flex-wrap gap-2 justify-center md:justify-between items-center pb-4">
 			<div class="flex gap-10">
 				{#if copyright && brand}
-					<small class="flex items-center gap-1 text-lg"><PrismicRichText field={copyright[0].copyright_text} /><em class="neonText-blue"><PrismicRichText field={brand[0].brand_name} /></em></small>
+					<small class="flex items-center gap-1 text-lg"
+						><PrismicRichText field={copyright[0].copyright_text} /><em class="neonText-blue"
+							><PrismicRichText field={brand[0].brand_name} /></em
+						></small
+					>
 				{/if}
+			</div>
+			<div class="flex gap-4">
+				{#each social as item}
+					{#if item}
+						<PrismicLink field={item.social_media_link}>
+							<Icon
+								width="30"
+								height="30"
+								class="neonIcon-red"
+								icon={extractIconIdentifier(item.icon_string)}
+							/>
+						</PrismicLink>
+					{/if}
+				{/each}
 			</div>
 		</div>
 	</div>

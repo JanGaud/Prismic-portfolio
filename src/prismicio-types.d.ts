@@ -97,6 +97,16 @@ export interface FooterDocumentDataSocialNavItem {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	social_media_name: prismic.KeyTextField;
+
+	/**
+	 * Social_Media_Link field in *Footer → Social_Nav*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.social_nav[].social_media_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	social_media_link: prismic.LinkField;
 }
 
 /**
