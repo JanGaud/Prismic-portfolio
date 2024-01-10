@@ -73,7 +73,7 @@
 				{/if}
 			</div>
 		</div>
-		<div class="flex flex-wrap-reverse gap-2 justify-center md:justify-between items-center pb-2">
+		<div class="flex flex-wrap-reverse gap-6 justify-center md:justify-between items-center pb-2">
 			<div class="flex gap-10">
 				{#if copyright && brand}
 					<small class="flex items-center gap-1 text-lg"
