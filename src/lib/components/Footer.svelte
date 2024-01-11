@@ -53,7 +53,7 @@
 	}
 </script>
 
-<footer class="text-fourth w-full border-y-2 h-fit px-6 py-2">
+<footer class="text-fourth w-full border-t-2 h-fit px-6 py-2">
 	<div class="flex flex-col justify-between flex-wrap gap-5">
 		<div class="flex border-b border-gray-500 py-5">
 			<div class="grayscale">
