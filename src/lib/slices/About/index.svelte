@@ -66,7 +66,7 @@
     .float-in-effect {
         opacity: 0;
         transform: translateY(20px);
-        transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+        transition: transform 0.9s ease-out, opacity 0.9s ease-out;
     }
 
     :global(.float-in-effect.visible) {

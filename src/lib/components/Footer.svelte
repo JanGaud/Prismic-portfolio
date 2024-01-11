@@ -25,7 +25,6 @@
 
 	export let social_active;
 
-
 	let sections = {};
 
 	function distributeLinks() {
@@ -92,14 +91,12 @@
 					>
 				{/if}
 			</div>
-			<div class="flex gap-4">
+			<div class="w-full flex justify-between md:justify-normal gap-6">
 				{#each social as item}
 					{#if item && social_active == true}
 						<PrismicLink field={item.social_media_link}>
 							<Icon
-							class="hover:text-third transition-colors"
-								width="16"
-								height="16"
+								class="hover:text-third transition-colors w-7 h-7 md:w-4 md:h-4"
 								icon={extractIconIdentifier(item.icon_string)}
 							/>
 						</PrismicLink>
