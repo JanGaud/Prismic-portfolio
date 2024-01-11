@@ -69,7 +69,7 @@
 						<ul class="flex flex-col gap-2 border-t p-2 border-secondary md:border-none">
 							{#each sections[section] as link}
 								<li
-									class="w-fit transform border-b-2 border-b-transparent hover:border-b-2 hover:border-fourth transition-transform"
+									class="w-fit hover:text-third hover:border-b-third border-b-2 py-2 border-transparent border-fourth transition-colors"
 								>
 									<PrismicLink field={link.footer_link}>
 										<PrismicRichText field={link.link_title} />
