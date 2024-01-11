@@ -28,10 +28,10 @@
 	</div>
 
 	<ul
-		class="hidden md:flex w-fit items-end justify-end gap-10 px-6 py-2 backdrop-blur-md rounded-2xl"
+		class="hidden md:flex w-fit items-end justify-end gap-10 px-6 backdrop-blur-md rounded-2xl shadow"
 	>
 		{#each links as link}
-			<li class="hover:text-third hover:border-b-third border-b-2 border-fourth transition-colors">
+			<li class="hover:text-third hover:border-b-third border-b-2 py-2 border-transparent border-fourth transition-colors">
 				<PrismicLink field={link.link}>
 					{link.label}
 				</PrismicLink>
