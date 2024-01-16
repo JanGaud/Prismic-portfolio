@@ -27,7 +27,7 @@
 		</h3>
 	</hgroup>
 
-	<div class="flex justify-around w-fit z-10">
+	<div class="flex justify-around min-h-18 w-fit z-10">
 		<a
 			class="text-lg md:text-2xl text-fourth px-6 py-4 border-2 border-fourth rounded-full shadow-lg hover:border-third hover:text-third hover:backdrop-blur transition-colors"
 			href={headerlink}

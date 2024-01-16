@@ -24,7 +24,7 @@
 
 <nav class="fixed top-0 w-full z-50 text-fourth flex justify-between items-center px-3 md:pl-10 md:pr-7 pt-2">
 	<div>
-		<a class="drop-shadow-xl" href="/"><PrismicImage width="100" field={brand[0]?.logo} /></a>
+		<a href="/"><PrismicImage width="100" field={brand[0]?.logo} /></a>
 	</div>
 
 	<ul
@@ -129,4 +129,5 @@
 		outline: 2px solid var(--c);
 		outline-offset: 5px;
 	}
+	
 </style>

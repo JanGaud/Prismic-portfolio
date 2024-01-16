@@ -1,0 +1,126 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Southern"
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"event_img",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+								"width": 12288,
+								"height": 16384
+							},
+							"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+							"width": 12288,
+							"height": 16384,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"event_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Nails"
+									}
+								}
+							]
+						}
+					],
+					[
+						"event_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Fugiat non exercitation exercitation aliquip proident in aute pariatur ex deserunt irure. Tempor ex fugiat nulla laboris ea nostrud ullamco adipisicing proident sunt. Ad id voluptate sint reprehenderit ad aliquip quis incididunt elit quis aute."
+									}
+								}
+							]
+						}
+					],
+					[
+						"event_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
+							}
+						}
+					],
+					[
+						"event_date",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Timestamp",
+							"value": "2012-11-10T05:13:39Z"
+						}
+					],
+					[
+						"link_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Excepteur dolor proident mollit qui amet nisi velit est cupidatat anim ad velit aliquip consequat ullamco."
+									}
+								}
+							]
+						}
+					],
+					[
+						"event_location",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Dolor id nulla in aliquip laboris laborum labore cillum ea cillum proident ad culpa velit. Dolore eiusmod veniam esse aliqua eiusmod laborum sint eiusmod sunt quis sunt elit deserunt."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

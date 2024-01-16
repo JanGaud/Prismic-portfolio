@@ -1,0 +1,88 @@
+{
+  "id": "events_section",
+  "type": "SharedSlice",
+  "name": "EventsSection",
+  "description": "EventsSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        }
+      },
+      "items": {
+        "event_img": {
+          "type": "Image",
+          "config": {
+            "label": "Event_Img",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "event_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Event_Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "event_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Event_Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "event_link": {
+          "type": "Link",
+          "config": {
+            "label": "Event_Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "link_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Link_Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "event_date": {
+          "type": "Timestamp",
+          "config": {
+            "label": "Event_Date",
+            "placeholder": ""
+          }
+        },
+        "event_location": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Event_Location",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        }
+      }
+    }
+  ]
+}

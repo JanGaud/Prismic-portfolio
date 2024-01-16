@@ -6,5 +6,5 @@ export function formatDate(dateStr) {
 
     const date = dateStr instanceof Date ? dateStr : new Date(dateStr);
 
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    return date.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
 }

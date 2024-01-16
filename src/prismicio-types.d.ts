@@ -257,6 +257,7 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 >;
 
 type PageDocumentDataSlicesSlice =
+	| EventsSectionSlice
 	| MusicPorfolioSlice
 	| PublicityBannerSlice
 	| AboutSlice
@@ -579,6 +580,123 @@ type ArticlesSliceVariation = ArticlesSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type ArticlesSlice = prismic.SharedSlice<'articles', ArticlesSliceVariation>;
+
+/**
+ * Primary content in *EventsSection → Primary*
+ */
+export interface EventsSectionSliceDefaultPrimary {
+	/**
+	 * Title field in *EventsSection → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: events_section.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.TitleField;
+}
+
+/**
+ * Primary content in *EventsSection → Items*
+ */
+export interface EventsSectionSliceDefaultItem {
+	/**
+	 * Event_Img field in *EventsSection → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: events_section.items[].event_img
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	event_img: prismic.ImageField<never>;
+
+	/**
+	 * Event_Title field in *EventsSection → Items*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: events_section.items[].event_title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	event_title: prismic.TitleField;
+
+	/**
+	 * Event_Description field in *EventsSection → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: events_section.items[].event_description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	event_description: prismic.RichTextField;
+
+	/**
+	 * Event_Link field in *EventsSection → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: events_section.items[].event_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	event_link: prismic.LinkField;
+
+	/**
+	 * Link_Text field in *EventsSection → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: events_section.items[].link_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	link_text: prismic.RichTextField;
+
+	/**
+	 * Event_Date field in *EventsSection → Items*
+	 *
+	 * - **Field Type**: Timestamp
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: events_section.items[].event_date
+	 * - **Documentation**: https://prismic.io/docs/field#timestamp
+	 */
+	event_date: prismic.TimestampField;
+
+	/**
+	 * Event_Location field in *EventsSection → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: events_section.items[].event_location
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	event_location: prismic.RichTextField;
+}
+
+/**
+ * Default variation for EventsSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EventsSectionSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<EventsSectionSliceDefaultPrimary>,
+	Simplify<EventsSectionSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *EventsSection*
+ */
+type EventsSectionSliceVariation = EventsSectionSliceDefault;
+
+/**
+ * EventsSection Shared Slice
+ *
+ * - **API ID**: `events_section`
+ * - **Description**: EventsSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EventsSectionSlice = prismic.SharedSlice<'events_section', EventsSectionSliceVariation>;
 
 /**
  * Primary content in *Header → Primary*
@@ -912,6 +1030,11 @@ declare module '@prismicio/client' {
 			ArticlesSliceDefaultItem,
 			ArticlesSliceVariation,
 			ArticlesSliceDefault,
+			EventsSectionSlice,
+			EventsSectionSliceDefaultPrimary,
+			EventsSectionSliceDefaultItem,
+			EventsSectionSliceVariation,
+			EventsSectionSliceDefault,
 			HeaderSlice,
 			HeaderSliceDefaultPrimary,
 			HeaderSliceVariation,

@@ -27,6 +27,9 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"events_section": {
+							"type": "SharedSlice"
+						},
 						"music_porfolio": {
 							"type": "SharedSlice"
 						},
